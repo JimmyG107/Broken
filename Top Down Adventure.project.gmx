@@ -33,6 +33,7 @@
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_test</sprite>
+    <sprite>sprites\spr_test2</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
