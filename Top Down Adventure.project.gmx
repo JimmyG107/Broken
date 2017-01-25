@@ -32,6 +32,7 @@
     </sprites>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_test</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
