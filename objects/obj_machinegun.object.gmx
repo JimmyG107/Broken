@@ -33,7 +33,7 @@ spread = 15;
 num_bullets = 1;
 ammo_cost = 1;
 damage = 1;
-scale = 3;
+scale = 1;
 </string>
           </argument>
         </arguments>

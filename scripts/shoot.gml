@@ -11,3 +11,5 @@ for(bul = 0; bul < num_bullets; bul++)
     bullet.damage = damage;
     if player bullet.create_source = "player";
 }
+if player obj_character.ammo[ammo_type] -= ammo_cost;
+//if this gun is owned by a player, subtract ammo

@@ -13,11 +13,13 @@
     </sprites>
     <sprites name="Weapons">
       <sprite>sprites\spr_machinegun</sprite>
+      <sprite>sprites\spr_swprd</sprite>
       <sprite>sprites\spr_shotgum</sprite>
       <sprite>sprites\spr_cannon</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_blob_still</sprite>
+      <sprite>sprites\spr_sir</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_enemy</sprite>
@@ -34,50 +36,65 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test2</sprite>
+    <sprite>sprites\spr_floor_wooden_clean</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_floor_wood</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="General">
+      <script>scripts\flipWeapon.gml</script>
       <script>scripts\setBulletSpeed.gml</script>
       <script>scripts\setScale.gml</script>
-      <script>scripts\objOnPath.gml</script>
-      <script>scripts\objOnPathExt.gml</script>
+      <script>scripts\lineOfSight.gml</script>
+      <script>scripts\lineOfSightExt.gml</script>
     </scripts>
     <scripts name="Weapons">
       <scripts name="par_gun">
-        <script>scripts\tryShoot.gml</script>
         <script>scripts\shoot.gml</script>
       </scripts>
+      <scripts name="par_melee">
+        <script>scripts\swing.gml</script>
+      </scripts>
+      <script>scripts\tryWeapon.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\init</object>
     <objects name="Characters">
       <object>objects\obj_character</object>
       <object>objects\obj_blob</object>
+      <object>objects\obj_sir</object>
     </objects>
+    <object>objects\init</object>
+    <object>objects\obj_enemy</object>
+    <object>objects\obj_wall</object>
     <objects name="Parents">
       <object>objects\par_bullet</object>
       <object>objects\par_dude</object>
       <object>objects\par_obstacle</object>
+      <object>objects\par_melee</object>
       <object>objects\par_gun</object>
       <object>objects\par_weapon</object>
     </objects>
+    <object>objects\plan</object>
     <objects name="Projectiles">
       <object>objects\obj_bullet_big</object>
       <object>objects\obj_bullet_small</object>
       <object>objects\obj_bomb</object>
     </objects>
     <objects name="Weapons">
-      <object>objects\obj_cannon</object>
-      <object>objects\obj_shotgun</object>
-      <object>objects\obj_machinegun</object>
+      <objects name="Guns">
+        <object>objects\obj_cannon</object>
+        <object>objects\obj_shotgun</object>
+        <object>objects\obj_machinegun</object>
+      </objects>
+      <objects name="Melee">
+        <object>objects\obj_sword</object>
+      </objects>
     </objects>
-    <object>objects\obj_enemy</object>
-    <object>objects\plan</object>
-    <object>objects\obj_wall</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_test</room>
