@@ -149,7 +149,7 @@ if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle) &amp;&amp;
 {
     with (weapons[active_weapon])
     {
-        tryShoot();
+        tryWeapon();
     }
 }
 </string>

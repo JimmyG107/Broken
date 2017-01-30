@@ -349,7 +349,7 @@ if(lMouse &amp;&amp; ammo[weapons[active_weapon].ammo_type] &gt;= weapons[active
 {   //go into the active weapon and shoot it
     with (weapons[active_weapon])
     {
-        tryShoot();
+        tryWeapon();
     }
 }
 </string>
