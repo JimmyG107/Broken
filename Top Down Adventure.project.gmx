@@ -59,6 +59,7 @@
       </scripts>
       <script>scripts\tryWeapon.gml</script>
     </scripts>
+    <script>scripts\genLvl.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Characters">
@@ -94,7 +95,6 @@
       </objects>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_test</room>
