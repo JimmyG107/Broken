@@ -32,7 +32,7 @@ Possible improvements:
 rooms = argument0; //the number of rooms to generate
 room_var = argument1; //the amount to randomly vary the above number by
 //ie total number of rooms is somewhere random between rooms - room_var and rooms + room_var
-halls = argument1; //same as above
+halls = argument2; //same as above
 hall_var = argument3;
 rooms += floor(random_range(-room_var, room_var + 1)); //rooms will vary positively or negatively by room_var
 halls += floor(random_range(-hall_var, hall_var + 1));//same
@@ -118,9 +118,42 @@ while(rooms + halls > 0)
     }
 }
 
+
+
 //2. Generate an array of objects in the dungeon (loot, monsters, traps, etc)
+
+
 //a. Make an 'objects' array for all of the objects that will be in the dungeon
+
+monsters = argument4;
+loot = argument5;
+traps = argument6;
+
+objects[monsters + loot + traps - 1, 2] = 0;
+
+
 //b. For each loot/monster, choose a room/hall to place it in (from the initial 'things' array), and a random location within that room.
+
+while(monsters + loot + traps > 0)
+{
+    rand_room = floor(random_range(0, array_length_1d(things)));
+    obj_x = floor(random_range(things[rand_room, 0], things[rand_room, 0] + things[rand_room, 2]));
+    obj_y = floor(random_range(things[rand_room, 1], things[rand_room, 1] + things[rand_room, 3]));
+    if(traps > 0)
+    {
+        
+    }
+    else if(loot > 0)
+    {
+    
+    }
+    else if(monsters > 0)
+    {
+    
+    }
+}
+
+
 //c. Check if there is already an object at that position in the 'objects' array
 //i. if not, add that loot to the objects array
 //ii. if so, go back to a.
