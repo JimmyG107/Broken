@@ -72,6 +72,7 @@
       <object>objects\obj_blob</object>
       <object>objects\obj_sir</object>
     </objects>
+    <object>objects\control</object>
     <object>objects\init</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
