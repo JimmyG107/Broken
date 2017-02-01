@@ -42,6 +42,7 @@
     <sprite>sprites\spr_gun_pistol</sprite>
     <sprite>sprites\spr_gun_sniper</sprite>
     <sprite>sprites\spr_gun_watergun</sprite>
+    <sprite>sprites\spr_dgjhbdvhkl</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
