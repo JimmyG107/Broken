@@ -41,6 +41,10 @@
     <sprite>sprites\spr_gun_sniper</sprite>
     <sprite>sprites\spr_gun_watergun</sprite>
     <sprite>sprites\spr_test4</sprite>
+    <sprite>sprites\spr_dgjhbdvhkl</sprite>
+    <sprite>sprites\spr_test6</sprite>
+    <sprite>sprites\spr_test7</sprite>
+    <sprite>sprites\spr_test8</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
@@ -71,6 +75,7 @@
       <object>objects\obj_blob</object>
       <object>objects\obj_sir</object>
     </objects>
+    <object>objects\control</object>
     <object>objects\init</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
