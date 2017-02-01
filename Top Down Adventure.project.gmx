@@ -44,6 +44,8 @@
     <sprite>sprites\spr_test6</sprite>
     <sprite>sprites\spr_test7</sprite>
     <sprite>sprites\spr_test8</sprite>
+    <sprite>sprites\spr_loot</sprite>
+    <sprite>sprites\spr_trap</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
@@ -102,6 +104,8 @@
         <object>objects\obj_sword</object>
       </objects>
     </objects>
+    <object>objects\obj_loot</object>
+    <object>objects\obj_trap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

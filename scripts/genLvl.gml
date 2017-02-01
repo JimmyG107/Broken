@@ -15,7 +15,8 @@ How this level designer works:
 3. Make the actual room from room_final
     a. Find the farthest rooms in all directions, and get the total height and width of the dungeon.
     b. Create a room, set its dimensions, and set the background tile.
-    c. Loop through the room_final array, creating objects at the specified positions
+    c. Create a room_final array of all of the objects and things in the room
+    d. Loop through the room_final array, creating objects at the specified positions
 
 Congratulations, now you have a dungeon!
 
@@ -206,9 +207,67 @@ for(test_thing = 0; test_thing < array_length_1d(things); test_thing++)
 rm_next = room_add();
 room_set_width(rm_next, x_max - x_min);
 room_set_height(rm_next, y_max - y_min);
-room_tile_add(rm_next, "back?", 0, 0, 32, 32, 0, 0, 10000)
-
-//c. Loop through the room_final array, creating objects at the specified positions
+room_tile_add(rm_next, bg_floor_wood, 0, 0, 32, 32, 0, 0, 10000)
 
 
+//c. Create a room_final array of all of the objects and things in the room
 
+room_final[x_max - x_min, y_max - y_min] = 1;
+for(x_current = 0; x_current <= x_max - x_min; x_current++)
+{
+    for(y_current = 0; y_current <= y_max - y_min; y_current++)
+    {
+        room_final[x_current, y_current] = 1;
+    }
+}
+for(thing_current = 0; thing_current < array_length_1d(things); thing_current++)
+{
+    for(x_pos = things[thing_current, 0]; x_pos < things[thing_currnet, 2]; x_pos++)
+    {
+        for(y_pos = things[thing_current, 1]; y_pos < things[thing_currnet, 3]; y_pos++)
+        {
+            room_final[x_pos, y_pos] = 0;
+        }
+    }
+}
+for(object_current = 0; object_current < array_length_1d(objects); object_current++)
+{
+    if(objects[object_current, 2] == obj_trap)
+    {
+        room_final[objects[object_current, 0], objects[object_current, 1]] = 2;
+    }
+    else if(objects[object_currnet, 2] == obj_loot)
+    {
+        room_final[objects[object_current, 0], objects[object_current, 1]] = 3;
+    }
+    else if(objects[object_current, 2] == obj_enemy)
+    {
+        room_final[objects[object_current, 0], objects[object_current, 1]] = 4;
+    }
+}
+
+//d. Loop through the room_final array, creating objects at the specified positions
+for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
+{
+    for(y_pos = 0; y_pos <= y_max - y_min; y_pos++)
+    {
+        if(room_final[x_pos, y_pos] == 1)
+        {
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_wall);
+        }
+        else if(room_final[x_pos, y_pos] == 2)
+        {
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_trap);
+        }
+        else if(room_final[x_pos, y_pos] == 3)
+        {
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_loot);
+        }
+        else if(room_final[x_pos, y_pos] == 4)
+        {
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_enemy);
+        }
+    }
+}
+
+room_goto(rm_next);
