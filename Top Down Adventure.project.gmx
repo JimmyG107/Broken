@@ -37,11 +37,14 @@
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test2</sprite>
     <sprite>sprites\spr_floor_wooden_clean</sprite>
-    <sprite>sprites\spr_enemy_frog</sprite>
-    <sprite>sprites\spr_enemy_zonbie</sprite>
     <sprite>sprites\spr_gun_pistol</sprite>
     <sprite>sprites\spr_gun_sniper</sprite>
     <sprite>sprites\spr_gun_watergun</sprite>
+<<<<<<< HEAD
+=======
+    <sprite>sprites\spr_test4</sprite>
+    <sprite>sprites\spr_dgjhbdvhkl</sprite>
+>>>>>>> 3336648f4d35e2c195978886796bd4f0f52888e9
     <sprite>sprites\spr_test6</sprite>
     <sprite>sprites\spr_test7</sprite>
     <sprite>sprites\spr_test8</sprite>
