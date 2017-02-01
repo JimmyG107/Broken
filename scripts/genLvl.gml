@@ -136,30 +136,78 @@ objects[monsters + loot + traps - 1, 2] = 0;
 
 while(monsters + loot + traps > 0)
 {
-    rand_room = floor(random_range(0, array_length_1d(things)));
-    obj_x = floor(random_range(things[rand_room, 0], things[rand_room, 0] + things[rand_room, 2]));
-    obj_y = floor(random_range(things[rand_room, 1], things[rand_room, 1] + things[rand_room, 3]));
+    loop = true;
+    while(loop) //find an unoccupied space in the dungeon
+    {
+        rand_room = floor(random_range(0, array_length_1d(things)));
+        obj_x = floor(random_range(things[rand_room, 0], things[rand_room, 0] + things[rand_room, 2])); //generate a random x
+        obj_y = floor(random_range(things[rand_room, 1], things[rand_room, 1] + things[rand_room, 3])); //and y
+        for(test_loot = monsters + loot + traps; test_loot < array_length_1d(objects); test_loot++) //loop through all of the existing objects
+        {
+            if(objects[test_loot, 0] != obj_x || objects[test_loot, 1] != obj_y)  //if the x or the y is different, break out of the loop
+            {
+                loop = false;
+                break;
+            }
+        }
+    }
+    //store those x and y values to the objects
+    objects[monsters + loot + traps - 1, 0] = obj_x;
+    objects[monsters + loot + traps - 1, 1] = obj_y;
+    
     if(traps > 0)
     {
-        
+        objects[mosters + loot + traps - 1, 2] = obj_trap;
     }
     else if(loot > 0)
     {
-    
+        objects[mosters + loot + traps - 1, 2] = obj_loot;
     }
     else if(monsters > 0)
     {
-    
+        objects[mosters + loot + traps - 1, 2] = obj_enemy;
     }
 }
 
 
-//c. Check if there is already an object at that position in the 'objects' array
-//i. if not, add that loot to the objects array
-//ii. if so, go back to a.
+
 //3. Make the actual room from room_final
+
+
 //a. Find the farthest rooms in all directions, and get the total height and width of the dungeon.
+
+x_min = 0;
+x_max = 0;
+y_min = 0;
+y_max = 0;
+for(test_thing = 0; test_thing < array_length_1d(things); test_thing++)
+{
+    if(things[test_thing, 0] < x_min)
+    {
+        x_min = things[test_thing, 0];
+    }
+    else if(things[test_thing, 0] > x_max)
+    {
+        x_max = things[test_thing, 0];
+    }
+    if(things[test_thing, 1] < y_min)
+    {
+        y_min = things[test_thing, 1];
+    }
+    else if(things[test_thing, 1] > y_max)
+    {
+        y_max = things[test_thing, 1];
+    }
+}
+
+
 //b. Create a room, set its dimensions, and set the background tile.
+
+rm_next = room_add();
+room_set_width(rm_next, x_max - x_min);
+room_set_height(rm_next, y_max - y_min);
+room_tile_add(rm_next, "back?", 0, 0, 32, 32, 0, 0, 10000)
+
 //c. Loop through the room_final array, creating objects at the specified positions
 
 
