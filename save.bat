@@ -1,4 +1,4 @@
-set /p user=Who is this?  (lowercase first name please):
+call getUser
 git checkout %user%
 git add -A
 git commit -m "%user% %date% %time%"
