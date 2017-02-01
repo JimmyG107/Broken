@@ -37,11 +37,10 @@
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test2</sprite>
     <sprite>sprites\spr_floor_wooden_clean</sprite>
-    <sprite>sprites\spr_enemy_frog</sprite>
-    <sprite>sprites\spr_enemy_zonbie</sprite>
     <sprite>sprites\spr_gun_pistol</sprite>
     <sprite>sprites\spr_gun_sniper</sprite>
     <sprite>sprites\spr_gun_watergun</sprite>
+    <sprite>sprites\spr_test4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
