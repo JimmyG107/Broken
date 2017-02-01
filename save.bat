@@ -15,8 +15,8 @@ if ("%user%"=="d")
 (
      set user=david
 )
-git checkout master
-git pull origin master
-git merge %user%
-git push origin master
+git checkout %user%
+git add -A
+git commit -m "%user% %date% %time%"
+git push origin %user%
 pause
