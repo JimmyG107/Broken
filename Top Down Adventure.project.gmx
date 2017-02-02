@@ -54,7 +54,6 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="General">
-      <script>scripts\weaponAngle.gml</script>
       <script>scripts\setBulletSpeed.gml</script>
       <script>scripts\setScale.gml</script>
       <script>scripts\lineOfSight.gml</script>
@@ -67,6 +66,7 @@
       <scripts name="par_melee">
         <script>scripts\swing.gml</script>
       </scripts>
+      <script>scripts\flipWeapon.gml</script>
       <script>scripts\tryWeapon.gml</script>
     </scripts>
     <script>scripts\genLvl.gml</script>

@@ -130,7 +130,8 @@ view_yview = y - view_hview/2;
             <string>///Update Gun Angle
 with weapons[active_weapon]
 {
-    weaponAngle();
+    image_angle = point_direction(x, y, mouse_x, mouse_y);
+    flipWeapon();
 }
 </string>
           </argument>

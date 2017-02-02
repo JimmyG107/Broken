@@ -110,13 +110,13 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DIE
-if(die)
+            <string>///Point Gun at Player
+if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle))
 {
-    instance_destroy();
-    with weapons[0]
+    with(weapons[active_weapon])
     {
-        instance_destroy();
+        image_angle = point_direction(x, y, obj_character.x, obj_character.y);
+        flipWeapon();
     }
 }
 </string>
@@ -139,7 +139,16 @@ if(die)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///DIE
+if(die)
+{
+    instance_destroy();
+    with weapons[0]
+    {
+        instance_destroy();
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
