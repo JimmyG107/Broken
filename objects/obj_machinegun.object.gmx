@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Gun Properties
-bps = 10;
+ups = 10;
 ammo_type = "bullet";
 projectile = obj_bullet_small;
 spread = 15;

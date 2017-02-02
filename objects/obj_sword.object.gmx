@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Sword Properties
+scale = 1;
 ups = 1;
 dmg = 1;
 </string>

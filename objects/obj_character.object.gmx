@@ -54,8 +54,12 @@ scale = 1;
 depth = -5;
 
 //Weapons and Ammo
-weapons[0] = instance_create(x, y, obj_sword);
+weapons[0] = instance_create(x, y, obj_machinegun);
+weapons[1] = instance_create(x, y, obj_shotgun);
+weapons[2] = instance_create(x, y, obj_cannon);
 weapons[0].player = true;
+weapons[1].player = true;
+weapons[2].player = true;
 weapons[0].active = true;
 /* Ammo Types
 0 = Bullet
