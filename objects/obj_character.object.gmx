@@ -130,8 +130,7 @@ view_yview = y - view_hview/2;
             <string>///Update Gun Angle
 with weapons[active_weapon]
 {
-    image_angle = point_direction(x, y, mouse_x, mouse_y);
-    flipWeapon();
+    weaponAngle();
 }
 </string>
           </argument>
@@ -327,6 +326,29 @@ if(spaceKeyPressed)
         }
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move Weapon
+weapons[active_weapon].x = x;
+weapons[active_weapon].y = y;
 </string>
           </argument>
         </arguments>

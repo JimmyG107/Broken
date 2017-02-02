@@ -54,7 +54,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="General">
-      <script>scripts\flipWeapon.gml</script>
+      <script>scripts\weaponAngle.gml</script>
       <script>scripts\setBulletSpeed.gml</script>
       <script>scripts\setScale.gml</script>
       <script>scripts\lineOfSight.gml</script>

@@ -37,7 +37,7 @@ die = false; //true if the dude is dying this step
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,12 +54,9 @@ die = false; //true if the dude is dying this step
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Control Weapon Position
-if(weapons[active_weapon] != noone)
-{
-    weapons[active_weapon].x = x;   //make the active weapon follow the dude
-    weapons[active_weapon].y = y;
-}
+            <string>///Update Weapon Position
+weapons[active_weapon].x = x;
+weapons[active_weapon].y = y;
 </string>
           </argument>
         </arguments>
