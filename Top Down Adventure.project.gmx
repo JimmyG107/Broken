@@ -18,7 +18,6 @@
       <sprite>sprites\spr_cannon</sprite>
     </sprites>
     <sprites name="Characters">
-      <sprite>sprites\spr_blob_still</sprite>
       <sprite>sprites\spr_sir</sprite>
     </sprites>
     <sprites name="Enemies">
@@ -74,11 +73,9 @@
   <objects name="objects">
     <objects name="Characters">
       <object>objects\obj_character</object>
-      <object>objects\obj_blob</object>
       <object>objects\obj_sir</object>
     </objects>
     <object>objects\control</object>
-    <object>objects\init</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
     <objects name="Parents">
