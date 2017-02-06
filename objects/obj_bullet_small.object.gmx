@@ -47,9 +47,8 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-scale = 4;
-setScale(self);
+            <string>///Bullet Settings
+reflect = false;
 </string>
           </argument>
         </arguments>
