@@ -336,6 +336,9 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
     }
 }
 
+//TESTING
+room_instance_add(rm_next, -2 * 32, -2 * 32, obj_enemy);
+
 view_width = 640;
 view_height = view_width * 3/4;
 room_set_view(rm_next, 0, true, player_x - view_width/2, player_y - view_height/2, view_width, view_height, 0, 0, 1280, 720, 0, 0, 1000, 1000, -1);
