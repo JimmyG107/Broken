@@ -79,7 +79,7 @@ ammo[1] = 20;
 ammo[0] = 100;
 
 //Character properties
-spd = 3;
+spd = 8;
 hp = 5;
 </string>
           </argument>
@@ -135,6 +135,43 @@ for(weapon_current = 0; weapon_current &lt; array_length_1d(weapons); weapon_cur
         flipWeapon();
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Generate Level Edges
+/*if(view_xview &lt; global.genLeft)
+{
+    genLvlEdge("left");
+}
+else if(view_xview + view_wview &gt; global.genRight)
+{
+    genLvlEdge("right");
+}
+if(view_yview &lt; global.genUp)
+{
+    genLvlEdge("up");
+}
+else if(view_yview + view_hview &gt; global.genDown)
+{
+    genLvlEdge("down");
+}*/
 </string>
           </argument>
         </arguments>

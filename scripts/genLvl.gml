@@ -245,7 +245,14 @@ for(test_thing = 0; test_thing < array_height_2d(things); test_thing++)
 rm_next = room_add();   //make a blank room
 room_set_width(rm_next, x_max - x_min + 1); //set the width equal to the number of spaces between x_min and x_max inclusive
 room_set_height(rm_next, y_max - y_min + 1);    //same
-room_tile_add(rm_next, bg_floor_wood, 0, 0, 32, 32, 0, 0, 10000)    //make the background tile of the room be clean wood
+for(i = 0; i < x_max - x_min + 1; i++)
+{
+    for(j = 0; j < y_max - y_min + 1; j++)
+    {
+        room_tile_add(rm_next, bg_floor_wood, 0, 0, 32, 32, i * 32 - 16, j * 32 - 16, 10000)    //make the background tile of the room be clean wood
+    }
+}
+
 
 
 //c. Create a room_final array of all of the objects and things in the room
@@ -339,8 +346,28 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
 //TESTING
 room_instance_add(rm_next, -2 * 32, -2 * 32, obj_enemy);
 
+
+//Generate Level Edges
+/*for(i = -10; i < array_height_2d(room_final) + 10; i++)
+{
+    for(j = -10; j < array_length_2d(room_final, 0) + 10; j++)
+    {
+        if(i < 0 || i >= array_height_2d(room_final) || j < 0 || j >= array_length_2d(room_final, 0))
+        {
+            room_instance_add(rm_next, i * 32, j * 32, obj_wall);
+        }
+    }
+}*/
+
 view_width = 640;
 view_height = view_width * 3/4;
+global.genLeft = -320;
+global.genRight = (array_height_2d(room_final) + 9) * 32;
+global.genUp = -320;
+global.genDown = (array_length_2d(room_final, 0) + 9) * 32;
+show_debug_message("level width = " + string((x_max - x_min + 1) * 32));
+show_debug_message("level height = " + string((y_max - y_min + 1) * 32));
+show_debug_message("genDown = " + string(global.genDown));
 room_set_view(rm_next, 0, true, player_x - view_width/2, player_y - view_height/2, view_width, view_height, 0, 0, 1280, 720, 0, 0, 1000, 1000, -1);
 room_set_view_enabled(rm_next, true);
 room_goto(rm_next);

@@ -79,7 +79,7 @@ global.projectiles[0] = obj_bullet_small;
           <argument>
             <kind>1</kind>
             <string>///Next Room
-genLvl(10, 0, 5, 0, 5, 1, 1);
+genLvl(10, 0, 5, 0, 5, 0, 0);
 </string>
           </argument>
         </arguments>
