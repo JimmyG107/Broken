@@ -46,6 +46,7 @@
     <sprite>sprites\spr_loot</sprite>
     <sprite>sprites\spr_trap</sprite>
     <sprite>sprites\spr_stairs</sprite>
+    <sprite>sprites\spr_test10</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
