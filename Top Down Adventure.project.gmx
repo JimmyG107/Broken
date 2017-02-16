@@ -33,6 +33,7 @@
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_zombie</sprite>
       <sprite>sprites\spr_slimes</sprite>
+      <sprite>sprites\spr_bandit</sprite>
     </sprites>
     <sprites name="Ammo Icons">
       <sprite>sprites\spr_ammo_shell</sprite>
