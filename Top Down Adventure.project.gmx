@@ -16,6 +16,12 @@
       <sprite>sprites\spr_swprd</sprite>
       <sprite>sprites\spr_shotgum</sprite>
       <sprite>sprites\spr_cannon</sprite>
+      <sprite>sprites\spr_gun_sniper</sprite>
+      <sprite>sprites\spr_gun_pistol</sprite>
+      <sprite>sprites\spr_gun_watergun</sprite>
+      <sprite>sprites\spr_shotgun1</sprite>
+      <sprite>sprites\spr_machinegun1</sprite>
+      <sprite>sprites\spr_machinepistol1</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_sir</sprite>
@@ -36,9 +42,6 @@
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test2</sprite>
     <sprite>sprites\spr_floor_wooden_clean</sprite>
-    <sprite>sprites\spr_gun_pistol</sprite>
-    <sprite>sprites\spr_gun_sniper</sprite>
-    <sprite>sprites\spr_gun_watergun</sprite>
     <sprite>sprites\spr_test4</sprite>
     <sprite>sprites\spr_test6</sprite>
     <sprite>sprites\spr_test7</sprite>
