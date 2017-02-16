@@ -69,6 +69,9 @@
     </scripts>
     <script>scripts\genLvl.gml</script>
     <script>scripts\genLvlEdge.gml</script>
+    <script>scripts\getPosAll.gml</script>
+    <script>scripts\setPosAll.gml</script>
+    <script>scripts\makeRealWall.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Characters">
@@ -76,7 +79,11 @@
       <object>objects\obj_sir</object>
     </objects>
     <object>objects\control</object>
+    <object>objects\control_lvl</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_loot</object>
+    <object>objects\obj_stairs</object>
+    <object>objects\obj_trap</object>
     <object>objects\obj_wall</object>
     <objects name="Parents">
       <object>objects\par_bullet</object>
@@ -102,9 +109,6 @@
         <object>objects\obj_sword</object>
       </objects>
     </objects>
-    <object>objects\obj_loot</object>
-    <object>objects\obj_trap</object>
-    <object>objects\obj_stairs</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

@@ -12,11 +12,11 @@ How this level designer works:
     c. Check if there is already an object at that position in the 'objects' array
         i. if not, add that loot to the objects array
         ii. if so, go back to a.
-3. Make the actual room from room_final
+3. Make the actual room from global.room_final
     a. Find the farthest rooms in all directions, and get the total height and width of the dungeon.
     b. Create a room, set its dimensions, and set the background tile.
-    c. Create a room_final array of all of the objects and things in the room
-    d. Loop through the room_final array, creating objects at the specified positions
+    c. Create a global.room_final array of all of the objects and things in the room
+    d. Loop through the global.room_final array, creating objects at the specified positions
 
 Congratulations, now you have a dungeon!
 
@@ -209,7 +209,7 @@ while(total > 0)
 
 
 
-//3. Make the actual room from room_final
+//3. Make the actual room from global.room_final
 
 
 //a. Find the farthest rooms in all directions, and get the total height and width of the dungeon.
@@ -260,7 +260,7 @@ for(i = 0; i < x_max - x_min + 1; i++)
 
 
 
-//c. Create a room_final array of all of the objects and things in the room
+//c. Create a global.room_final array of all of the objects and things in the room
 
 /*
 0 = empty space
@@ -272,12 +272,12 @@ for(i = 0; i < x_max - x_min + 1; i++)
 6 = player exit
 7 = interactable wall
 */
-room_final[x_max - x_min, y_max - y_min] = 1;   //initialize the array
+global.room_final[x_max - x_min, y_max - y_min] = 1;   //initialize the array
 for(x_current = 0; x_current <= x_max - x_min; x_current++)
 {
     for(y_current = 0; y_current <= y_max - y_min; y_current++)
     {
-        room_final[x_current, y_current] = 1;   //set all values in the 2d array to 1 (the code for a filled space)
+        global.room_final[x_current, y_current] = 1;   //set all values in the 2d array to 1 (the code for a filled space)
     }
 }
 for(thing_current = 0; thing_current < array_height_2d(things); thing_current++)    //loop through each room and hall
@@ -286,7 +286,7 @@ for(thing_current = 0; thing_current < array_height_2d(things); thing_current++)
     {
         for(y_pos = things[thing_current, 1]; y_pos < things[thing_current, 1] + things[thing_current, 3]; y_pos++)    //and y positions in each room,
         {
-            room_final[x_pos - x_min, y_pos - y_min] = 0;   //make that corresponding position in the master array be an empty space (0).
+            global.room_final[x_pos - x_min, y_pos - y_min] = 0;   //make that corresponding position in the master array be an empty space (0).
         }
     }
 }
@@ -297,128 +297,132 @@ for(thing_current = 0; thing_current < array_height_2d(things); thing_current++)
     y_pos = things[thing_current, 1] - 1;
     for(x_pos = things[thing_current, 0] - 1; x_pos < things[thing_current, 0] + things[thing_current, 2] + 1; x_pos++)
     {
-        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        if(global.room_final[x_pos - x_min, y_pos - y_min] == 1)
         {
-            room_final[x_pos - x_min, y_pos - y_min] = 7;
+            global.room_final[x_pos - x_min, y_pos - y_min] = 7;
         }
     }
     //bottom edge
     y_pos = things[thing_current, 1] + things[thing_current, 3];
     for(x_pos = things[thing_current, 0] - 1; x_pos < things[thing_current, 0] + things[thing_current, 2] + 1; x_pos++)
     {
-        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        if(global.room_final[x_pos - x_min, y_pos - y_min] == 1)
         {
-            room_final[x_pos - x_min, y_pos - y_min] = 7;
+            global.room_final[x_pos - x_min, y_pos - y_min] = 7;
         }
     }
     //left edge
     x_pos = things[thing_current, 0] - 1;
     for(y_pos = things[thing_current, 1]; y_pos < things[thing_current, 1] + things[thing_current, 3]; y_pos++)
     {
-        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        if(global.room_final[x_pos - x_min, y_pos - y_min] == 1)
         {
-            room_final[x_pos - x_min, y_pos - y_min] = 7;
+            global.room_final[x_pos - x_min, y_pos - y_min] = 7;
         }
     }
     //right edge
     x_pos = things[thing_current, 0] + things[thing_current, 2];
     for(y_pos = things[thing_current, 1]; y_pos < things[thing_current, 1] + things[thing_current, 3]; y_pos++)
     {
-        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        if(global.room_final[x_pos - x_min, y_pos - y_min] == 1)
         {
-            room_final[x_pos - x_min, y_pos - y_min] = 7;
+            global.room_final[x_pos - x_min, y_pos - y_min] = 7;
         }
     }
 }
-//place objects in the room_final array
+//place objects in the global.room_final array
 for(object_current = 0; object_current < array_height_2d(objects); object_current++)
 {
     if(objects[object_current, 2] == obj_trap)
     {
-        room_final[objects[object_current, 0]- x_min, objects[object_current, 1] - y_min] = 2;
+        global.room_final[objects[object_current, 0]- x_min, objects[object_current, 1] - y_min] = 2;
     }
     else if(objects[object_current, 2] == obj_loot)
     {
-        room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 3;
+        global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 3;
     }
     else if(objects[object_current, 2] == obj_enemy)
     {
-        room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 4;
+        global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 4;
     }
     else if(objects[object_current, 2] == obj_sir)
     {
-        room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 5;
+        global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 5;
     }
     else if(objects[object_current, 2] == obj_stairs)
     {
-        room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 6;
+        global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 6;
     }
 }
 
-//d. Loop through the room_final array, creating objects at the specified positions
+//d. Loop through the global.room_final array, creating objects at the specified positions
 for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
 {
     for(y_pos = 0; y_pos <= y_max - y_min; y_pos++)
     {
-        if(room_final[x_pos, y_pos] == 1)
+        if(global.room_final[x_pos, y_pos] == 1)
         {
             room_tile_add(rm_next, bg_wall, 0, 0, 32, 32, x_pos * 32 - 16, y_pos * 32 - 16, 9000);
         }
-        else if(room_final[x_pos, y_pos] == 2)
+        else if(global.room_final[x_pos, y_pos] == 2)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_trap);
         }
-        else if(room_final[x_pos, y_pos] == 3)
+        else if(global.room_final[x_pos, y_pos] == 3)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_loot);
         }
-        else if(room_final[x_pos, y_pos] == 4)
+        else if(global.room_final[x_pos, y_pos] == 4)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_enemy);
         }
-        else if(room_final[x_pos, y_pos] == 5)
+        else if(global.room_final[x_pos, y_pos] == 5)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_sir);
             player_x = x_pos;
             player_y = y_pos;
             
         }
-        else if(room_final[x_pos, y_pos] == 6)
+        else if(global.room_final[x_pos, y_pos] == 6)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_stairs);
         }
-        else if(room_final[x_pos, y_pos] == 7)
+        else if(global.room_final[x_pos, y_pos] == 7)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_wall);
         }
     }
 }
 
-//TESTING
-room_instance_add(rm_next, -2 * 32, -2 * 32, obj_enemy);
-
-
-//Generate Level Edges
-/*for(i = -10; i < array_height_2d(room_final) + 10; i++)
+//print out the level design in the console
+for(i = 0; i < array_length_2d(global.room_final, 0); i++)
 {
-    for(j = -10; j < array_length_2d(room_final, 0) + 10; j++)
+    prt_line = "";
+    for(j = 0; j < array_height_2d(global.room_final); j++)
     {
-        if(i < 0 || i >= array_height_2d(room_final) || j < 0 || j >= array_length_2d(room_final, 0))
-        {
-            room_instance_add(rm_next, i * 32, j * 32, obj_wall);
-        }
+        prt_line = prt_line + string(global.room_final[j, i]) + " ";
     }
-}*/
+    show_debug_message(prt_line);
+}
 
+//initialize the 1st, 2nd, and 3rd quardant for the cartesian array
+global.room_final1[0, 0] = "";
+global.room_final2[0, 0] = "";
+global.room_final3[0, 0] = "";
+
+//add a controller object to the next room and give it the level design
+room_instance_add(rm_next, 0, 0, control_lvl);
+
+//view settings
 view_width = 640;
 view_height = view_width * 3/4;
-global.genLeft = -320;
-global.genRight = (array_height_2d(room_final) + 9) * 32;
-global.genUp = -320;
-global.genDown = (array_length_2d(room_final, 0) + 9) * 32;
-show_debug_message("level width = " + string((x_max - x_min + 1) * 32));
-show_debug_message("level height = " + string((y_max - y_min + 1) * 32));
-show_debug_message("genDown = " + string(global.genDown));
+//the borders
+global.genLeft = 0;
+global.genRight = (array_height_2d(global.room_final) - 1) * 32;
+global.genUp = 0;
+global.genDown = (array_length_2d(global.room_final, 0) - 1) * 32;
+//set view
 room_set_view(rm_next, 0, true, player_x - view_width/2, player_y - view_height/2, view_width, view_height, 0, 0, 1280, 720, 0, 0, 1000, 1000, -1);
 room_set_view_enabled(rm_next, true);
+//bon voyage!
 room_goto(rm_next);
