@@ -1,4 +1,4 @@
-/*
+﻿/*
 rom_next1 is the 1st quadrant
 2 is the 2nd, 3 is the 4th, and room_next is the 4th (the main room)
 the 4th quadrant includes x and y [0, ∞], and the other arrays are stacked right beside (but NOT overlapping) that one.
