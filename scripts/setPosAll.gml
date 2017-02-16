@@ -13,7 +13,7 @@ if(x_pos < 0)   //left
 {
     if(y_pos < 0)   //up
     {
-        global.room_next2[x_pos*-1 - 1, y_pos * -1 - 1] = set_value;
+        global.room_final2[x_pos*-1 - 1, y_pos * -1 - 1] = set_value;
     }
     else    //down
     {
