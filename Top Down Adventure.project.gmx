@@ -46,6 +46,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
+    <background>background\bg_wall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
