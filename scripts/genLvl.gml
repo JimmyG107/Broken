@@ -238,6 +238,11 @@ for(test_thing = 0; test_thing < array_height_2d(things); test_thing++)
         y_max = things[test_thing, 1] + things[test_thing, 3] - 1;
     }
 }
+//add a space on the outside for walls
+x_min--;
+x_max++;
+y_min--;
+y_max++;
 
 
 //b. Create a room, set its dimensions, and set the background tile.
@@ -265,6 +270,7 @@ for(i = 0; i < x_max - x_min + 1; i++)
 4 = enemy
 5 = player spawn
 6 = player exit
+7 = interactable wall
 */
 room_final[x_max - x_min, y_max - y_min] = 1;   //initialize the array
 for(x_current = 0; x_current <= x_max - x_min; x_current++)
@@ -284,6 +290,47 @@ for(thing_current = 0; thing_current < array_height_2d(things); thing_current++)
         }
     }
 }
+//mark the walls surrounding each room/hall
+for(thing_current = 0; thing_current < array_height_2d(things); thing_current++)    //loop through each room and hall
+{
+    //top edge
+    y_pos = things[thing_current, 1] - 1;
+    for(x_pos = things[thing_current, 0] - 1; x_pos < things[thing_current, 0] + things[thing_current, 2] + 1; x_pos++)
+    {
+        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        {
+            room_final[x_pos - x_min, y_pos - y_min] = 7;
+        }
+    }
+    //bottom edge
+    y_pos = things[thing_current, 1] + things[thing_current, 3];
+    for(x_pos = things[thing_current, 0] - 1; x_pos < things[thing_current, 0] + things[thing_current, 2] + 1; x_pos++)
+    {
+        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        {
+            room_final[x_pos - x_min, y_pos - y_min] = 7;
+        }
+    }
+    //left edge
+    x_pos = things[thing_current, 0] - 1;
+    for(y_pos = things[thing_current, 1]; y_pos < things[thing_current, 1] + things[thing_current, 3]; y_pos++)
+    {
+        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        {
+            room_final[x_pos - x_min, y_pos - y_min] = 7;
+        }
+    }
+    //right edge
+    x_pos = things[thing_current, 0] + things[thing_current, 2];
+    for(y_pos = things[thing_current, 1]; y_pos < things[thing_current, 1] + things[thing_current, 3]; y_pos++)
+    {
+        if(room_final[x_pos - x_min, y_pos - y_min] == 1)
+        {
+            room_final[x_pos - x_min, y_pos - y_min] = 7;
+        }
+    }
+}
+//place objects in the room_final array
 for(object_current = 0; object_current < array_height_2d(objects); object_current++)
 {
     if(objects[object_current, 2] == obj_trap)
@@ -315,7 +362,7 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
     {
         if(room_final[x_pos, y_pos] == 1)
         {
-            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_wall);
+            room_tile_add(rm_next, bg_wall, 0, 0, 32, 32, x_pos * 32 - 16, y_pos * 32 - 16, 9000);
         }
         else if(room_final[x_pos, y_pos] == 2)
         {
@@ -339,6 +386,10 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
         else if(room_final[x_pos, y_pos] == 6)
         {
             room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_stairs);
+        }
+        else if(room_final[x_pos, y_pos] == 7)
+        {
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_wall);
         }
     }
 }
