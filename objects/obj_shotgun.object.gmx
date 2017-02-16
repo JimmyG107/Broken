@@ -33,6 +33,8 @@ num_bullets = 8;
 ammo_cost = 2;
 spread = 30;
 damage = 1;
+burst_cd = 0;
+burst_max = 1;
 scale = 1;
 </string>
           </argument>

@@ -75,7 +75,7 @@ damage = 1;
           <argument>
             <kind>1</kind>
             <string>///Move and Hit Walls
-/*if(place_meeting(x + spd_x, y + spd_y, par_obstacle))   //if moving this turn would put it inside a wall
+if(place_meeting(x + spd_x, y + spd_y, par_obstacle))   //if moving this turn would put it inside a wall
 {
     if(reflect)
     {
@@ -104,10 +104,10 @@ damage = 1;
     }
 }
 else
-{*/
+{
     x += spd_x;
     y += spd_y;
-//}
+}
 </string>
           </argument>
         </arguments>
@@ -159,14 +159,14 @@ if(abs(spd_x) &lt; 3 &amp;&amp; abs(spd_y) &lt; 3 &amp;&amp; image_index == spri
           <argument>
             <kind>1</kind>
             <string>///Destroy bullet and wall
-if(create_source == "player")
+/*if(create_source == "player")
 {
     instance_destroy();
     with other
     {
         instance_destroy();
     }
-}
+}*/
 </string>
           </argument>
         </arguments>

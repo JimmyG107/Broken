@@ -38,6 +38,8 @@ When the weapon is used, use_tick is set equal to use_cd, and will then decrease
 use_cd = 30/ups;
 use_tick = 0;
 
+burst_tick = 0; //the current tick; this is set = to burst_cd
+bursts = 0; //number of shots currently to do
 
 active = false;
 depth = -5;
@@ -64,10 +66,50 @@ player = false; //true if owned by player, false if owned by enemy
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Decrease Weapon use_tick
+            <string>///Decrease Weapon use_tick and burst_tick
 if(use_tick &gt; 0 &amp;&amp; active)
 {
     use_tick--;
+}
+if(burst_tick &gt; 0)
+{
+    burst_tick--;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shoot Burst
+if(bursts &gt; 0 &amp;&amp; burst_tick &lt;= 0)
+{
+    if(object_get_parent(object_index) == par_gun)
+    {
+        shoot();
+    }
+    else if(object_get_parent(object_index) == par_melee)
+    {
+        swing();
+    }
+    bursts--
+    burst_tick = burst_cd;
 }
 </string>
           </argument>
