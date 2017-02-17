@@ -82,11 +82,11 @@ global.projectiles[0] = obj_bullet_small;
 randomize();
 genLvl( 10,//rooms
         0,//room variation (+-)
-        0,//halls
+        5,//halls
         0,//hall variation(+-)
-        0,//enemies
-        30,//loot
-        0);//traps
+        5,//enemies
+        2,//loot
+        2);//traps
 </string>
           </argument>
         </arguments>

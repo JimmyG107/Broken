@@ -26,65 +26,58 @@
           <argument>
             <kind>1</kind>
             <string>///Tell other walls they're now the surface wall
-with control_lvl
+conv_x = x/32;//the corresponding position in the coordinate plane array
+conv_y = y/32;
+setPosAll(conv_x, conv_y, 8);   //set this block's code to '8' for 'rubble'
+//check the 8 surrounding positions for interior walls
+
+/*    structure:
+if( there is an interior wall at this position )
 {
-    other_x = other.x;  //the x and y values of the wall which is being deleted
-    other_y = other.y;
-    conv_x = other_x/32;//the corresponding position in the coordinate plane array
-    conv_y = other_y/32;
-    setPosAll(conv_x, conv_y, 8);   //set this block's code to '8' for 'rubble'
-    //check the 8 surrounding positions for interior walls
-    
-    /*    structure:
-    if( there is an interior wall at this position )
-    {
-        delete the wall tile at that position;
-        add a wall object at that position;
-        and finally, change that block's code to that of a solid wall in the array
-    }
-    */
-    //top left
-    if(getPosAll(conv_x - 1, conv_y - 1) == 1)
-    {
-        makeRealWall(conv_x - 1, conv_y - 1);
-    }
-    //top middle
-    if(getPosAll(conv_x, conv_y - 1) == 1)
-    {
-        makeRealWall(conv_x, conv_y - 1);
-    }
-    //top right
-    if(getPosAll(conv_x + 1, conv_y - 1) == 1)
-    {
-        makeRealWall(conv_x + 1, conv_y - 1);
-    }
-    //middle left
-    if(getPosAll(conv_x - 1, conv_y) == 1)
-    {
-        makeRealWall(conv_x - 1, conv_y);
-    }
-    //middle right
-    if(getPosAll(conv_x + 1, conv_y) == 1)
-    {
-        makeRealWall(conv_x + 1, conv_y);
-    }
-    show_debug_message("code = " + string(getPosAll(conv_x - 1, conv_y + 1)));
-    show_debug_message("==1 = " + string(getPosAll(conv_x - 1, conv_y + 1) == 1));
-    //bottom left
-    if(getPosAll(conv_x - 1, conv_y + 1) == 1)
-    {
-        makeRealWall(conv_x - 1, conv_y + 1);
-    }
-    //bottom middle
-    if(getPosAll(conv_x, conv_y + 1) == 1)
-    {
-        makeRealWall(conv_x, conv_y + 1);
-    }
-    //bottom right
-    if(getPosAll(conv_x + 1, conv_y + 1) == 1)
-    {
-        makeRealWall(conv_x + 1, conv_y + 1);
-    }
+    delete the wall tile at that position;
+    add a wall object at that position;
+    and finally, change that block's code to that of a solid wall in the array
+}
+*/
+//top left
+if(getPosAll(conv_x - 1, conv_y - 1) == 1)
+{
+    makeRealWall(conv_x - 1, conv_y - 1);
+}
+//top middle
+if(getPosAll(conv_x, conv_y - 1) == 1)
+{
+    makeRealWall(conv_x, conv_y - 1);
+}
+//top right
+if(getPosAll(conv_x + 1, conv_y - 1) == 1)
+{
+    makeRealWall(conv_x + 1, conv_y - 1);
+}
+//middle left
+if(getPosAll(conv_x - 1, conv_y) == 1)
+{
+    makeRealWall(conv_x - 1, conv_y);
+}
+//middle right
+if(getPosAll(conv_x + 1, conv_y) == 1)
+{
+    makeRealWall(conv_x + 1, conv_y);
+}
+//bottom left
+if(getPosAll(conv_x - 1, conv_y + 1) == 1)
+{
+    makeRealWall(conv_x - 1, conv_y + 1);
+}
+//bottom middle
+if(getPosAll(conv_x, conv_y + 1) == 1)
+{
+    makeRealWall(conv_x, conv_y + 1);
+}
+//bottom right
+if(getPosAll(conv_x + 1, conv_y + 1) == 1)
+{
+    makeRealWall(conv_x + 1, conv_y + 1);
 }
 </string>
           </argument>
