@@ -14,7 +14,7 @@
     <sprites name="Weapons">
       <sprite>sprites\spr_machinegun</sprite>
       <sprite>sprites\spr_swprd</sprite>
-      <sprite>sprites\spr_shotgum</sprite>
+      <sprite>sprites\spr_shotgun</sprite>
       <sprite>sprites\spr_cannon</sprite>
       <sprite>sprites\spr_gun_sniper</sprite>
       <sprite>sprites\spr_gun_pistol</sprite>

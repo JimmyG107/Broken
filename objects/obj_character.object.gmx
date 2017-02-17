@@ -64,7 +64,7 @@ hp = 5;
 //States
 state_machine_init();
 state_create("Stand", state_player_stand);
-state_create("Walk", state_player_walk);
+state_create("Move", state_player_move);
 state_init("Stand");
 </string>
           </argument>
