@@ -5,10 +5,123 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>par_dude</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize Variables
+
+//Image Settings
+scale = 1;
+depth = -5;
+instance_create(x, y, camera);
+
+//Weapons and Ammo
+weapons[0] = instance_create(x, y, obj_ak47);
+weapons[1] = instance_create(x, y, obj_shotgun);
+weapons[2] = instance_create(x, y, obj_cannon);
+weapons[0].player = true;
+weapons[1].player = true;
+weapons[2].player = true;
+weapons[0].active = true;
+active_weapon = 0;
+
+/* Ammo Types
+0 = Bullet
+1 = Shell
+2 = Explosive
+3 = Energy
+4 = Sniper
+5 = Dark/Blood
+6 = Flames
+7 = Love
+*/
+ammo[7] = 0;
+ammo[6] = 0;
+ammo[5] = 0;
+ammo[4] = 0;
+ammo[3] = 0;
+ammo[2] = 20;
+ammo[1] = 20;
+ammo[0] = 100;
+
+//Character properties
+spd_max = 10;
+hp = 5;
+
+//States
+state_machine_init();
+state_create("Stand", state_player_stand);
+state_create("Move", state_player_move);
+state_init("Stand");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Inherit Event
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///State Cleanup
+state_cleanup();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -47,131 +160,8 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-
-//Image Settings
-scale = 1;
-depth = -5;
-
-//Weapons and Ammo
-weapons[0] = instance_create(x, y, obj_ak47);
-weapons[1] = instance_create(x, y, obj_shotgun);
-weapons[2] = instance_create(x, y, obj_cannon);
-weapons[0].player = true;
-weapons[1].player = true;
-weapons[2].player = true;
-weapons[0].active = true;
-/* Ammo Types
-0 = Bullet
-1 = Shell
-2 = Explosive
-3 = Energy
-4 = Sniper
-5 = Dark
-6 = Flames
-*/
-ammo[6] = 0;
-ammo[5] = 0;
-ammo[4] = 0;
-ammo[3] = 0;
-ammo[2] = 20;
-ammo[1] = 20;
-ammo[0] = 100;
-
-//Character properties
-spd = 8;
-hp = 5;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Control View
-view_xview = x - view_wview/2;
-view_yview = y - view_hview/2;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Update Gun Angle
-for(weapon_current = 0; weapon_current &lt; array_length_1d(weapons); weapon_current++)
-{
-    with weapons[weapon_current]
-    {
-        image_angle = point_direction(x, y, mouse_x, mouse_y);
-        flipWeapon();
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Generate Level Edges
-if(view_xview &lt; global.genLeft)
-{
-    genLvlEdge("left");
-}
-else if(view_xview + view_wview &gt; global.genRight)
-{
-    genLvlEdge("right");
-}
-if(view_yview &lt; global.genUp)
-{
-    genLvlEdge("up");
-}
-else if(view_yview + view_hview &gt; global.genDown)
-{
-    genLvlEdge("down");
-}
+            <string>///Update State
+state_update();
 </string>
           </argument>
         </arguments>
@@ -286,23 +276,8 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move
-if(dKey)
-{
-    x += spd;
-}
-if(aKey)
-{
-    x -= spd;
-}
-if(sKey)
-{
-    y += spd;
-}
-if(wKey)
-{
-    y -= spd;
-}
+            <string>///Execute State
+state_execute();
 </string>
           </argument>
         </arguments>
@@ -323,146 +298,7 @@ if(wKey)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Switch Guns
-if(spaceKeyPressed)
-{
-    active_weapon++;
-    num_weapons = array_length_1d(weapons);
-    if(active_weapon = num_weapons)
-    {
-        active_weapon = 0;
-    }
-    for(i = 0; i &lt; num_weapons; i++)
-    {
-        if(i = active_weapon)
-        {
-            weapons[i].active = true;
-        }
-        else
-        {
-            weapons[i].active = false;
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Move Weapon
-weapons[active_weapon].x = x;
-weapons[active_weapon].y = y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Attempt to Fire Primary Weapon
-//if you are clicking and you have enough ammo, 
-if(lMouse &amp;&amp; ammo[weapons[active_weapon].ammo_type] &gt;= weapons[active_weapon].ammo_cost)
-{   //go into the active weapon and shoot it
-    with (weapons[active_weapon])
-    {
-        tryWeapon();
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Print Room Layout to Console
-if(keyboard_check_pressed(ord('J')))
-{
-    for(i = 0; i &lt; array_length_2d(global.room_final, 0); i++)
-    {
-        prt_line = "";
-        for(j = 0; j &lt; array_height_2d(global.room_final); j++)
-        {
-            prt_line = prt_line + string(global.room_final[j, i]) + " ";
-        }
-        show_debug_message(prt_line);
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Print room_final2
-if(keyboard_check_pressed(ord('K')))
-{
-    for(i = array_height_2d(global.room_final2) - 1; i &gt;= 0; i--)
-    {
-        prt_str = "";
-        for(j = array_length_2d(global.room_final2, i) - 1; i &gt;= 0; i--)
-        {
-            prt_str = prt_str + string(global.room_final2[i, j]);
-        }
-        show_debug_message(prt_str);
-    }
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -516,12 +352,16 @@ if(other.create_source != "player")
           <argument>
             <kind>1</kind>
             <string>///Draw Ammo
-draw_rectangle_colour(5, 495 + 17 * scale * active_weapon, 65 , 500 + 12 * scale + 5 + 17 * scale * active_weapon, c_green, c_green, c_green, c_green, 0);
 scale = 2;
+//green rectangle around the currently selected type of ammo
+draw_rectangle_colour(5, 495 + 17 * scale * weapons[active_weapon].ammo_type, 65 , 500 + 12 * scale + 5 + 17 * scale * active_weapon, c_green, c_green, c_green, c_green, 0);
+//bullets
 draw_sprite_stretched(spr_ammo_bullet, 0, 10, 500, 5 * scale, 12 * scale);
 draw_text(30, 510, ammo[0])
+//shells
 draw_sprite_stretched(spr_ammo_shell, 0, 10, 500 + 17 * scale, 5 * scale, 12 * scale);
 draw_text(30, 510 + 17 * scale, ammo[1]);
+//explosives
 draw_sprite_stretched(spr_ammo_explosive, 0, 10, 500 + 2 * 17 * scale, 5 * scale, 12 * scale);
 draw_text(30, 510 + 2 * 17 * scale, ammo[2]);
 </string>

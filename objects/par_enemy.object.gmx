@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>par_dude</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,31 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Inherit Event
-event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Initialize Variables
+
+//Image Settings
+depth = 0;
+
+//Enemy Settings
 hp = 3;
-chance_firing = .05;
+
+//Weapon Settings MOVE INTO WEAPON SUBCLASS
+/*active_weapon = 0;
+chance_firing = .1;
 if(image_xscale == 2)
 {
     weapons[0] = instance_create(x, y, obj_cannon);
@@ -65,35 +51,13 @@ else
         weapons[0] = instance_create(x, y, obj_shotgun);
     }
 }
-weapons[0].active = true;
+weapons[0].active = true;*/
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Inherit Event
-event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -170,8 +134,9 @@ if(die)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Inherit Event
-event_inherited();
+            <string>///Update Weapon Position
+weapons[active_weapon].x = x;
+weapons[active_weapon].y = y;
 </string>
           </argument>
         </arguments>
@@ -193,7 +158,7 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>///Try to shoot the player
-if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle) &amp;&amp; random(1) &lt;= chance_firing)
+if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle) &amp;&amp; random(1) &lt;= 1-power(1-chance_firing, 1/30))
 {
     with (weapons[active_weapon])
     {

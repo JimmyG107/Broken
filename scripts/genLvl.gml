@@ -201,7 +201,7 @@ while(total > 0)
     }
     else if(monsters > 0)   //if there are more monsters to be made, make this object an enemy
     {
-        objects[total - 1, 2] = obj_enemy;
+        objects[total - 1, 2] = obj_slime;
         monsters--;
     }
     total = monsters + loot + traps + player_spawn + player_exit;
@@ -341,7 +341,7 @@ for(object_current = 0; object_current < array_height_2d(objects); object_curren
     {
         global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 3;
     }
-    else if(objects[object_current, 2] == obj_enemy)
+    else if(objects[object_current, 2] == obj_slime)
     {
         global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 4;
     }
@@ -374,11 +374,11 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
         }
         else if(global.room_final[x_pos, y_pos] == 4)
         {
-            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_enemy);
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_slime);
         }
         else if(global.room_final[x_pos, y_pos] == 5)
         {
-            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_sir);
+            room_instance_add(rm_next, x_pos * 32, y_pos * 32, obj_facecrab);
             player_x = x_pos;
             player_y = y_pos;
             

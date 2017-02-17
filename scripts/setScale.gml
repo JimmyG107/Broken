@@ -1,3 +1,2 @@
-obj = argument0;
-obj.image_xscale = obj.scale;
-obj.image_yscale = obj.scale;
+image_xscale = scale;
+image_yscale = scale;

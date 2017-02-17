@@ -50,7 +50,7 @@ event_inherited();
             <string>///Initialize Variables
 reflect = false;
 scale = 3;
-setScale(self);
+setScale();
 </string>
           </argument>
         </arguments>
