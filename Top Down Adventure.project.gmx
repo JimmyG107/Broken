@@ -27,6 +27,7 @@
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_sir</sprite>
+      <sprite>sprites\spr_cyborg</sprite>
       <sprite>sprites\spr_facecrab</sprite>
     </sprites>
     <sprites name="Enemies">
