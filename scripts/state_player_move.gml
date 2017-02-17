@@ -1,0 +1,4 @@
+switchGuns();
+updateGuns();
+attemptFire();
+

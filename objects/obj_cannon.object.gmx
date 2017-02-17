@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Gun Properties
+action = shoot;
 ups = 1;
 ammo_type = "explosive";
 projectile = obj_bomb;

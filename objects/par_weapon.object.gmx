@@ -100,15 +100,8 @@ if(burst_tick &gt; 0)
             <string>///Shoot Burst
 if(bursts &gt; 0 &amp;&amp; burst_tick &lt;= 0)
 {
-    if(object_get_parent(object_index) == par_gun)
-    {
-        shoot();
-    }
-    else if(object_get_parent(object_index) == par_melee)
-    {
-        swing();
-    }
-    bursts--
+    script_execute(action);
+    bursts--;
     burst_tick = burst_cd;
 }
 </string>

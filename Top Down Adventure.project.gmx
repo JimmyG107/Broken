@@ -56,7 +56,6 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="General">
-      <script>scripts\setBulletSpeed.gml</script>
       <script>scripts\setScale.gml</script>
       <script>scripts\lineOfSight.gml</script>
       <script>scripts\lineOfSightExt.gml</script>
@@ -64,6 +63,7 @@
     <scripts name="Weapons">
       <scripts name="par_gun">
         <script>scripts\shoot.gml</script>
+        <script>scripts\setBulletSpeed.gml</script>
       </scripts>
       <scripts name="par_melee">
         <script>scripts\swing.gml</script>
@@ -71,11 +71,25 @@
       <script>scripts\flipWeapon.gml</script>
       <script>scripts\tryWeapon.gml</script>
     </scripts>
-    <script>scripts\genLvl.gml</script>
-    <script>scripts\genLvlEdge.gml</script>
-    <script>scripts\getPosAll.gml</script>
-    <script>scripts\setPosAll.gml</script>
-    <script>scripts\makeRealWall.gml</script>
+    <script>scripts\state_machine_init.gml</script>
+    <scripts name="obj_character">
+      <scripts name="States">
+        <script>scripts\state_player_move.gml</script>
+        <script>scripts\state_player_stand.gml</script>
+      </scripts>
+      <scripts name="Actions">
+        <script>scripts\switchGuns.gml</script>
+        <script>scripts\attemptFire.gml</script>
+        <script>scripts\updateGuns.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Level Generation">
+      <script>scripts\setPosAll.gml</script>
+      <script>scripts\genLvl.gml</script>
+      <script>scripts\makeRealWall.gml</script>
+      <script>scripts\genLvlEdge.gml</script>
+      <script>scripts\getPosAll.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Characters">
@@ -108,12 +122,13 @@
         <object>objects\obj_cannon</object>
         <object>objects\obj_shotgun</object>
         <object>objects\obj_machinegun</object>
+        <object>objects\obj_ak47</object>
       </objects>
       <objects name="Melee">
         <object>objects\obj_sword</object>
       </objects>
     </objects>
-    <object>objects\obj_ak47</object>
+    <object>objects\obj_camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
