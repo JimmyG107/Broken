@@ -80,6 +80,7 @@
       <scripts name="Actions">
         <script>scripts\switchGuns.gml</script>
         <script>scripts\attemptFire.gml</script>
+        <script>scripts\moveCharacter.gml</script>
         <script>scripts\updateGuns.gml</script>
       </scripts>
     </scripts>

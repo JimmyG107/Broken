@@ -1,4 +1,4 @@
 switchGuns();
 updateGuns();
 attemptFire();
-
+moveCharacter();
