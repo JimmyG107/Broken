@@ -59,7 +59,26 @@ if(place_meeting(x, y + spd_y, par_obstacle))
 }
 y += spd_y;
 
+//Nullify spd_[direction] if hitting a wall
+if(place_meeting(x+1, y, par_obstacle))
+{
+    spd_right = 0;
+}
+if(place_meeting(x-1, y, par_obstacle))
+{
+    spd_left = 0;
+}
+if(place_meeting(x, y+1, par_obstacle))
+{
+    spd_down = 0;
+}
+if(place_meeting(x, y-1, par_obstacle))
+{
+    spd_up = 0;
+}
+
 //Other Behaviors
+updateCamera();
 switchGuns();
 updateGuns();
 attemptFire();

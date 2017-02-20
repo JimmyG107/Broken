@@ -94,14 +94,21 @@
           <script>scripts\tryWeapon.gml</script>
         </scripts>
         <scripts name="par_character">
-          <scripts name="States">
-            <script>scripts\state_player_move.gml</script>
-            <script>scripts\state_player_stand.gml</script>
-          </scripts>
           <scripts name="Actions">
             <script>scripts\switchGuns.gml</script>
             <script>scripts\attemptFire.gml</script>
             <script>scripts\updateGuns.gml</script>
+            <script>scripts\updateCamera.gml</script>
+          </scripts>
+          <scripts name="States">
+            <script>scripts\state_player_move.gml</script>
+            <script>scripts\state_player_stand.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="par_enemy">
+          <scripts name="Actions">
+            <script>scripts\updateWeaponPos.gml</script>
+            <script>scripts\tryShootPlayer.gml</script>
           </scripts>
         </scripts>
       </scripts>
@@ -157,6 +164,7 @@
         <object>objects\obj_machinegun</object>
         <object>objects\obj_shotgun</object>
         <object>objects\obj_wallDestroyer</object>
+        <object>objects\obj_gun_particleSplitter</object>
       </objects>
       <objects name="Melee">
         <object>objects\obj_sword</object>
