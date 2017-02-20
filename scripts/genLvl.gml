@@ -181,7 +181,7 @@ while(total > 0)
     
     if(player_spawn > 0)   //if there are more monsters to be made, make this object an enemy
     {
-        objects[total - 1, 2] = obj_sir;
+        objects[total - 1, 2] = obj_facecrab;
         player_spawn--;
     }
     else if(player_exit > 0)   //if there are more monsters to be made, make this object an enemy
@@ -345,7 +345,7 @@ for(object_current = 0; object_current < array_height_2d(objects); object_curren
     {
         global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 4;
     }
-    else if(objects[object_current, 2] == obj_sir)
+    else if(objects[object_current, 2] == obj_facecrab)
     {
         global.room_final[objects[object_current, 0] - x_min, objects[object_current, 1] - y_min] = 5;
     }
