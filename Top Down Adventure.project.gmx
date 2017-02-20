@@ -18,6 +18,7 @@
       <sprite>sprites\spr_sir</sprite>
       <sprite>sprites\spr_facecrab</sprite>
       <sprite>sprites\spr_cyborg</sprite>
+      <sprite>sprites\spr_knight</sprite>
     </sprites>
     <sprites name="Cursors">
       <sprite>sprites\spr_cursor</sprite>
