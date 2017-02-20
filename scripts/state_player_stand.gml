@@ -3,6 +3,8 @@ if(state_new)
 {
     move_h = false;
     move_v = false;
+    spd_x = 0;
+    spd_y = 0;
 }
 
 updateCamera();
