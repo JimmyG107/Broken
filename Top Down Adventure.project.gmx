@@ -49,21 +49,20 @@
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="Weapons">
-      <sprite>sprites\spr_gun_machinegun</sprite>
-      <sprite>sprites\spr_melee_sword</sprite>
-      <sprite>sprites\spr_gun_shotgun_alpha</sprite>
-      <sprite>sprites\spr_gun_cannon</sprite>
-      <sprite>sprites\spr_gun_sniper</sprite>
-      <sprite>sprites\spr_gun_pistol</sprite>
-      <sprite>sprites\spr_gun_watergun</sprite>
-      <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_ak47</sprite>
-      <sprite>sprites\spr_gun_uzi</sprite>
+      <sprite>sprites\spr_gun_cannon</sprite>
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
-      <sprite>sprites\spr_pistol1</sprite>
+      <sprite>sprites\spr_gun_machinegun</sprite>
+      <sprite>sprites\spr_gun_pistol</sprite>
+      <sprite>sprites\spr_gun_shotgun</sprite>
+      <sprite>sprites\spr_gun_shotgun_alpha</sprite>
+      <sprite>sprites\spr_gun_sniper</sprite>
+      <sprite>sprites\spr_gun_uzi</sprite>
+      <sprite>sprites\spr_gun_watergun</sprite>
       <sprite>sprites\spr_melee_battleaxe1</sprite>
       <sprite>sprites\spr_melee_battleaxe2</sprite>
       <sprite>sprites\spr_melee_spear</sprite>
+      <sprite>sprites\spr_melee_sword</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
