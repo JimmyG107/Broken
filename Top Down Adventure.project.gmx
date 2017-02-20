@@ -61,6 +61,9 @@
       <sprite>sprites\spr_uzi</sprite>
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
       <sprite>sprites\spr_pistol1</sprite>
+      <sprite>sprites\spr_melee_battleaxe1</sprite>
+      <sprite>sprites\spr_melee_battleaxe2</sprite>
+      <sprite>sprites\spr_melee_spear</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
