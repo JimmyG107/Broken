@@ -60,11 +60,12 @@
       <sprite>sprites\spr_melee_sword</sprite>
       <sprite>sprites\spr_melee_battleaxe1</sprite>
       <sprite>sprites\spr_melee_battleaxe2</sprite>
+      <sprite>sprites\spr_pistol1</sprite>
       <sprite>sprites\spr_melee_spear</sprite>
+      <sprite>sprites\spr_gun_m4a4</sprite>
     </sprites>
     <sprites name="Retired Sprites">
       <sprite>sprites\spr_gun_shotgun_alpha</sprite>
-      <sprite>sprites\spr_pistol1</sprite>
       <sprite>sprites\spr_gun_pistol_alpha</sprite>
     </sprites>
   </sprites>
