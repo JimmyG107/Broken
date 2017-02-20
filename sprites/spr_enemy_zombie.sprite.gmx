@@ -20,6 +20,6 @@
   <width>128</width>
   <height>128</height>
   <frames>
-    <frame index="0">images\spr_enemy_zonbie_0.png</frame>
+    <frame index="0">images\spr_enemy_zombie_0.png</frame>
   </frames>
 </sprite>
