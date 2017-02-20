@@ -157,13 +157,13 @@
     </objects>
     <objects name="Weapons">
       <objects name="Guns">
-        <object>objects\obj_ak47</object>
-        <object>objects\obj_watergun</object>
-        <object>objects\obj_sniper</object>
-        <object>objects\obj_cannon</object>
-        <object>objects\obj_machinegun</object>
-        <object>objects\obj_shotgun</object>
-        <object>objects\obj_wallDestroyer</object>
+        <object>objects\obj_gun_ak47</object>
+        <object>objects\obj_gun_watergun</object>
+        <object>objects\obj_gun_sniper</object>
+        <object>objects\obj_gun_cannon</object>
+        <object>objects\obj_gun_machinegun</object>
+        <object>objects\obj_gun_shotgun</object>
+        <object>objects\obj_gun_wallDestroyer</object>
         <object>objects\obj_gun_particleSplitter</object>
       </objects>
       <objects name="Melee">
