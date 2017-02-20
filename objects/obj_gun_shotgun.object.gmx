@@ -36,7 +36,7 @@ spread = 30;
 damage = 1;
 burst_cd = 0;
 burst_max = 1;
-scale = 1;
+scale = .4;
 </string>
           </argument>
         </arguments>
