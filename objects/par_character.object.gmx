@@ -35,9 +35,9 @@ view_xview = x - view_wview/2;
 view_yview = y - view_hview/2;
 
 //Weapons and Ammo
-weapons[0] = instance_create(x, y, obj_watergun);
-weapons[1] = instance_create(x, y, obj_shotgun);
-weapons[2] = instance_create(x, y, obj_cannon);
+weapons[0] = instance_create(x, y, obj_gun_ak47);
+weapons[1] = instance_create(x, y, obj_gun_shotgun);
+weapons[2] = instance_create(x, y, obj_gun_cannon);
 weapons[0].player = true;
 weapons[1].player = true;
 weapons[2].player = true;

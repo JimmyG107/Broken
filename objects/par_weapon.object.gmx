@@ -100,8 +100,15 @@ if(burst_tick &gt; 0)
             <string>///Shoot Burst
 if(bursts &gt; 0 &amp;&amp; burst_tick &lt;= 0)
 {
-    script_execute(action);
-    bursts--;
+    if(par_character.ammo[ammo_type] &lt; ammo_cost)
+    {
+        //play *click* sound
+    }
+    else
+    {
+        script_execute(action);
+        bursts--;
+    }
     burst_tick = burst_cd;
 }
 </string>
