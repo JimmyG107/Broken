@@ -33,7 +33,7 @@ depth = -5;
 instance_create(x, y, camera);
 
 //Weapons and Ammo
-weapons[0] = instance_create(x, y, obj_ak47);
+weapons[0] = instance_create(x, y, obj_watergun);
 weapons[1] = instance_create(x, y, obj_shotgun);
 weapons[2] = instance_create(x, y, obj_cannon);
 weapons[0].player = true;
