@@ -47,17 +47,17 @@
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="Weapons">
-      <sprite>sprites\spr_machinegun</sprite>
-      <sprite>sprites\spr_swprd</sprite>
-      <sprite>sprites\spr_shotgun</sprite>
-      <sprite>sprites\spr_cannon</sprite>
+      <sprite>sprites\spr_gun_machinegun</sprite>
+      <sprite>sprites\spr_melee_sword</sprite>
+      <sprite>sprites\spr_gun_shotgun</sprite>
+      <sprite>sprites\spr_gun_cannon</sprite>
       <sprite>sprites\spr_gun_sniper</sprite>
       <sprite>sprites\spr_gun_pistol</sprite>
       <sprite>sprites\spr_gun_watergun</sprite>
-      <sprite>sprites\spr_shotgun1</sprite>
-      <sprite>sprites\spr_ak47</sprite>
-      <sprite>sprites\spr_machinepistol1</sprite>
-      <sprite>sprites\spr_grenadelauncher1</sprite>
+      <sprite>sprites\spr_gun_shotgun1</sprite>
+      <sprite>sprites\spr_gun_ak47</sprite>
+      <sprite>sprites\spr_uzi</sprite>
+      <sprite>sprites\spr_gun_grenadelauncher1</sprite>
       <sprite>sprites\spr_pistol1</sprite>
     </sprites>
   </sprites>
