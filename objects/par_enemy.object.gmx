@@ -33,6 +33,32 @@ depth = 0;
 //Enemy Settings
 hp = 3;
 
+//State Engine
+state_machine_init();
+state_create("Frozen", state_enemy_frozen);
+state_create("Idle", state_enemy_idle);
+state_init("Frozen");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MOVE TO SUBCLASS
 //Weapon Settings MOVE INTO WEAPON SUBCLASS
 /*active_weapon = 0;
 chance_firing = .1;
@@ -52,6 +78,59 @@ else
     }
 }
 weapons[0].active = true;*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Cleanup State
+state_cleanup();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MOVE TO CHILD OBJECT:  Delete Weapons
+//Delete all weapons this enemy has
+for(i = 0; i &lt; array_length_1d(weapons[0]); i++)
+{
+    with weapons[i]
+    {
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -103,15 +182,8 @@ if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DIE
-if(die)
-{
-    instance_destroy();
-    with weapons[0]
-    {
-        instance_destroy();
-    }
-}
+            <string>///Update State
+state_update();
 </string>
           </argument>
         </arguments>
@@ -134,37 +206,8 @@ if(die)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update Weapon Position
-weapons[active_weapon].x = x;
-weapons[active_weapon].y = y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Try to shoot the player
-if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle) &amp;&amp; random(1) &lt;= 1-power(1-chance_firing, 1/30))
-{
-    with (weapons[active_weapon])
-    {
-        tryWeapon();
-    }
-}
+            <string>///Execute State
+state_execute();
 </string>
           </argument>
         </arguments>
