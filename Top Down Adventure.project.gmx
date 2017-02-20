@@ -141,7 +141,6 @@
     </objects>
     <objects name="Parents">
       <object>objects\par_bullet</object>
-      <object>objects\par_character</object>
       <object>objects\par_gun</object>
       <object>objects\par_melee</object>
       <object>objects\par_obstacle</object>
@@ -171,10 +170,7 @@
       </objects>
     </objects>
   </objects>
-  <rooms name="rooms">
-    <room>rooms\rm_init</room>
-    <room>rooms\rm_test</room>
-  </rooms>
+  <rooms name="rooms"/>
   <help>
     <rtf>help.rtf</rtf>
   </help>
