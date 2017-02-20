@@ -57,7 +57,7 @@
       <sprite>sprites\spr_gun_watergun</sprite>
       <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_ak47</sprite>
-      <sprite>sprites\spr_uzi</sprite>
+      <sprite>sprites\spr_gun_uzi</sprite>
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
       <sprite>sprites\spr_pistol1</sprite>
     </sprites>
