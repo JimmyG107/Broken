@@ -50,14 +50,6 @@ cursor_sprite = spr_cursor;
             <kind>1</kind>
             <string>///Initialize Global Variables
 global.debug_mode = false;
-
-global.weapons[2] = obj_cannon;
-global.weapons[1] = obj_shotgun;
-global.weapons[0] = obj_machinegun;
-
-global.projectiles[2] = obj_bomb;
-global.projectiles[1] = obj_bullet_big;
-global.projectiles[0] = obj_bullet_small;
 </string>
           </argument>
         </arguments>
