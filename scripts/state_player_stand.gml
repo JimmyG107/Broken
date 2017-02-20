@@ -9,7 +9,8 @@ if(state_new)
 
 updateCamera();
 switchGuns();
-updateGuns();
+updateGunPos();
+updateGunAngle();
 attemptFire();
 
 //Check if we need to exit to move state
