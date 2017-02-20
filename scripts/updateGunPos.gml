@@ -1,3 +1,6 @@
 ///Move Weapon
-weapons[active_weapon].x = x;
-weapons[active_weapon].y = y;
+for(i = 0; i < array_length_1d(weapons); i++)
+{
+    weapons[i].x = x;
+    weapons[i].y = y;
+}

@@ -270,7 +270,7 @@ if(other.create_source != "player")
             <string>///Draw Ammo
 scale = 2;
 //green rectangle around the currently selected type of ammo
-draw_rectangle_colour(5, 495 + 17 * scale * weapons[active_weapon].ammo_type, 65 , 500 + 12 * scale + 5 + 17 * scale * active_weapon, c_green, c_green, c_green, c_green, 0);
+draw_rectangle_colour(5, 495 + 17 * scale * weapons[active_weapon].ammo_type, 65 , 500 + 12 * scale + 5 + 17 * scale * weapons[active_weapon].ammo_type, c_green, c_green, c_green, c_green, 0);
 //bullets
 draw_sprite_stretched(spr_ammo_bullet, 0, 10, 500, 5 * scale, 12 * scale);
 draw_text(30, 510, ammo[0])

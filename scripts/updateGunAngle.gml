@@ -1,6 +1,9 @@
 ///Update Gun Angle
-with weapons[active_weapon]
+for(i = 0; i < array_length_1d(weapons); i++)
 {
-    image_angle = point_direction(x, y, mouse_x, mouse_y);
-    flipWeapon();
+    with weapons[i]
+    {
+        image_angle = point_direction(x, y, mouse_x, mouse_y);
+        flipWeapon();
+    }
 }
