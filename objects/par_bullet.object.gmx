@@ -30,6 +30,7 @@ spd = 30;
 create_source = "enemy";
 scale = 1;
 damage = 1;
+slow_spd = .95
 </string>
           </argument>
         </arguments>
@@ -129,7 +130,6 @@ else
           <argument>
             <kind>1</kind>
             <string>///Slow Down and Stop Existing
-slow_spd = .95
 spd_x *= slow_spd;
 spd_y *= slow_spd;
 if(abs(spd_x) &lt; 3 &amp;&amp; abs(spd_y) &lt; 3 &amp;&amp; image_index == sprite_get_number(sprite_index)-1)
