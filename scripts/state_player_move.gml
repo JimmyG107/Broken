@@ -8,6 +8,11 @@ if(state_new)
     stopping = 2;
 }
 
+//Control Guns
+updateGunAngle();
+switchGuns();
+attemptFire();
+
 //Change Speeds from Key Input
 spd_left += (aKey * snappy - !aKey * stopping);
 spd_right += (dKey * snappy - !dKey * stopping);
@@ -27,11 +32,13 @@ if spd_up < 0 spd_up = 0;
 if spd_down < 0 spd_down = 0;
 
 //Print spds to console
-show_debug_message(spd_left);
-show_debug_message(spd_right);
-show_debug_message(spd_up);
-show_debug_message(spd_down);
-show_debug_message("");
+if(global.debug_mode)
+{
+    show_debug_message("Speed Left = " + string(spd_left));
+    show_debug_message("Speed Right = " + string(spd_right));
+    show_debug_message("Speed Up = " + string(spd_up));
+    show_debug_message("Speed Down = " + string(spd_down));
+}
 
 //Calculate Final x and y speeds from component speeds
 spd_x = spd_right - spd_left;
@@ -81,9 +88,7 @@ if(place_meeting(x, y-1, par_obstacle))
 
 //Other Behaviors
 updateCamera();
-switchGuns();
-updateGuns();
-attemptFire();
+updateGunPos();
 
 //Determine if we need to go to the slow state
 if(spd_x == 0 && spd_y == 0)

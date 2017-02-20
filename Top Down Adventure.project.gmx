@@ -100,10 +100,11 @@
         </scripts>
         <scripts name="par_character">
           <scripts name="Actions">
-            <script>scripts\switchGuns.gml</script>
             <script>scripts\attemptFire.gml</script>
-            <script>scripts\updateGuns.gml</script>
+            <script>scripts\switchGuns.gml</script>
             <script>scripts\updateCamera.gml</script>
+            <script>scripts\updateGunAngle.gml</script>
+            <script>scripts\updateGunPos.gml</script>
           </scripts>
           <scripts name="States">
             <script>scripts\state_player_move.gml</script>
