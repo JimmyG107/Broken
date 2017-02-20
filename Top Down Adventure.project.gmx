@@ -163,6 +163,7 @@
         <object>objects\obj_gun_sniper</object>
         <object>objects\obj_gun_cannon</object>
         <object>objects\obj_gun_machinegun</object>
+        <object>objects\obj_gun_uzi</object>
         <object>objects\obj_gun_shotgun</object>
         <object>objects\obj_gun_wallDestroyer</object>
         <object>objects\obj_gun_particleSplitter</object>

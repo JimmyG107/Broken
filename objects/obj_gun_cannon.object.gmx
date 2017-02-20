@@ -40,6 +40,8 @@ burst_max = 1;
 projectile = obj_bomb;
 num_bullets = 1;
 ammo_cost = 4;
+bulletSpeed = 30;
+bulletSpeedDecay = .97;
 
 //Other Settings
 spread = 0;
