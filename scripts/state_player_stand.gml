@@ -1,13 +1,14 @@
-switchGuns();
-updateGuns();
-attemptFire();
-
 //initialize vairables
 if(state_new)
 {
     move_h = false;
     move_v = false;
 }
+
+updateCamera();
+switchGuns();
+updateGuns();
+attemptFire();
 
 //Check if we need to exit to move state
 

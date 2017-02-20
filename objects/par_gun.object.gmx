@@ -126,8 +126,8 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>///Determine Barrel Position
-barrel_position_x = x + (sprite_width + -sprite_get_xoffset(sprite_index) * scale) * cos(degtorad(image_angle));
-barrel_position_y = y + (sprite_width + -sprite_get_xoffset(sprite_index) * scale) * -sin(degtorad(image_angle));
+barrel_position_x = x + (sprite_get_width(sprite_index) + -sprite_get_xoffset(sprite_index)) * scale * cos(degtorad(image_angle));
+barrel_position_y = y + (sprite_get_width(sprite_index) + -sprite_get_xoffset(sprite_index)) * scale * -sin(degtorad(image_angle));
 </string>
           </argument>
         </arguments>
