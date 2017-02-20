@@ -5,6 +5,8 @@ for(bul = 0; bul < num_bullets; bul++)
     bullet.image_angle = point_direction(x, y, barrel_position_x, barrel_position_y);
     //spread (modify the angle)
     bullet.image_angle += random_range(-spread, spread);
+    bullet.spd = bulletSpeed;
+    bullet.slow_spd = bulletSpeedDecay;
     //set the bullet's x and y speeds based on its spd variable and angle.
     setBulletSpeed(bullet);
     bullet.scale = 2;
