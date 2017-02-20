@@ -17,6 +17,7 @@
     <sprites name="Characters">
       <sprite>sprites\spr_sir</sprite>
       <sprite>sprites\spr_facecrab</sprite>
+      <sprite>sprites\spr_cyborg</sprite>
     </sprites>
     <sprites name="Cursors">
       <sprite>sprites\spr_cursor</sprite>
@@ -25,7 +26,7 @@
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_zombie</sprite>
       <sprite>sprites\spr_slime</sprite>
-      <sprite>sprites\spr_bandit</sprite>
+      <sprite>sprites\spr_evilr2d2</sprite>
     </sprites>
     <sprites name="Environment">
       <sprites name="Loot">
