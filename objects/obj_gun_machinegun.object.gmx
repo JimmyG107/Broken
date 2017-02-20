@@ -26,16 +26,28 @@
           <argument>
             <kind>1</kind>
             <string>///Gun Properties
+
+//Type of Weapon
 action = shoot;
-ups = 10;
 ammo_type = "bullet";
-projectile = obj_bullet_small;
-spread = 15;
-num_bullets = 1;
-ammo_cost = 1;
-damage = 1;
+
+//Uses per sec and Burst
+ups = 10;
 burst_cd = 0;
 burst_max = 1;
+
+//Bullets
+projectile = obj_bullet_small;
+num_bullets = 1;
+ammo_cost = 1;
+bulletSpeed = 30;
+bulletSpeedDecay = .97;
+
+//Other Settings
+spread = 15;
+damage = 1;
+
+//Visual
 scale = 1;
 </string>
           </argument>
