@@ -4,8 +4,8 @@ if(state_new)
     spd_right = 0;
     spd_up = 0;
     spd_down = 0;
-    snappy = 1.5;
-    stopping = 1.5;
+    snappy = 2;
+    stopping = 2;
 }
 
 //Change Speeds from Key Input
@@ -40,22 +40,24 @@ spd_y = spd_down - spd_up;
 //If you're gonna bump into a wall, move right up to it
 if(place_meeting(x + spd_x, y, par_obstacle))
 {
-    while(!place_meeting(x + sign(spd_x), y, par_obstacle))
+    dist = 0;
+    while(!place_meeting(x + dist + sign(spd_x), y, par_obstacle))
     {
-        x += sign(spd_x);
+        dist += sign(spd_x);
     }
-    spd_x = 0;
+    spd_x = dist;
 }
 x += spd_x;
 
 //Same as above, but for vertical collisions
 if(place_meeting(x, y + spd_y, par_obstacle))
 {
-    while(!place_meeting(x, y + sign(spd_y), par_obstacle))
+    dist = 0;
+    while(!place_meeting(x, y + dist + sign(spd_y), par_obstacle))
     {
-        y += sign(spd_y);
+        dist += sign(spd_y);
     }
-    spd_y = 0;
+    spd_y = dist;
 }
 y += spd_y;
 

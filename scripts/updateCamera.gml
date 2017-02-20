@@ -9,6 +9,13 @@ if(instance_exists(camera))
         //Update View
         view_xview = x - view_wview/2;
         view_yview = y - view_hview/2;
+        if(keyboard_check(ord('J')))
+        {
+        show_debug_message("Camera x:  " + string(x));
+        show_debug_message("Camera y:  " + string(y));
+        show_debug_message("Mouse x:  " + string(mouse_x));
+        show_debug_message("Mouse y:  " + string(mouse_y));
+        }
         
         ///Generate Level Edges
         if(view_xview < global.genLeft)
