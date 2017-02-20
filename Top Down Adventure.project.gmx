@@ -141,6 +141,7 @@
     </objects>
     <objects name="Parents">
       <object>objects\par_bullet</object>
+      <object>objects\par_character</object>
       <object>objects\par_gun</object>
       <object>objects\par_melee</object>
       <object>objects\par_obstacle</object>
