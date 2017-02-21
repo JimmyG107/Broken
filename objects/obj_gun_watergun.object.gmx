@@ -44,7 +44,7 @@ bulletSpeed = 10;
 bulletSpeedDecay = .97;
 
 //Other Settings
-spread = 45;
+spread = 50;
 damage = 0;
 
 //Visual
