@@ -52,7 +52,7 @@
     <sprites name="Weapons">
       <sprite>sprites\spr_gun_ak47</sprite>
       <sprite>sprites\spr_gun_cannon</sprite>
-      <sprite>sprites\spr_gun_grenadelauncher1</sprite>
+      <sprite>sprites\spr_gun_grenadeLauncher</sprite>
       <sprite>sprites\spr_gun_pistol</sprite>
       <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_sniper</sprite>
