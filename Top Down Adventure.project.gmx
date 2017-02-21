@@ -52,13 +52,7 @@
     <sprites name="Weapons">
       <sprite>sprites\spr_gun_ak47</sprite>
       <sprite>sprites\spr_gun_cannon</sprite>
-<<<<<<< HEAD
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
-      <sprite>sprites\spr_gun_machinegun</sprite>
-=======
-      <sprite>sprites\spr_gun_grenadeLauncher</sprite>
-      <sprite>sprites\spr_gun_m4a4</sprite>
->>>>>>> fe8c195a9c9768a2c40f1588b7671f98abea336a
       <sprite>sprites\spr_gun_pistol</sprite>
       <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_sniper</sprite>
