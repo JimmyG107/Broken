@@ -1,6 +1,7 @@
-///Enemy is frozen and will do nothing until the player enters a certain radius
-if(distance_to_object(par_character) < range)
+if(instance_exists(par_character))
 {
-    //Switch to the enemy-specific idle state
-    state_switch(idleState);
+    if(distance_to_object(par_character) < range)
+    {
+        state_switch("Idle");
+    }
 }
