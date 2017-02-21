@@ -35,7 +35,7 @@ view_xview = x - view_wview/2;
 view_yview = y - view_hview/2;
 
 //Weapons and Ammo
-weapons[0] = instance_create(x, y, obj_gun_shotgun);
+weapons[0] = instance_create(x, y, obj_gun_grenadeLauncher);
 weapons[1] = instance_create(x, y, obj_gun_watergun);
 weapons[2] = instance_create(x, y, obj_gun_uzi);
 weapons[0].player = true;
@@ -65,7 +65,7 @@ ammo[0] = 100;
 
 //Character properties
 spd_max = 10;
-hp = 5;
+hp = 6;
 
 //States
 state_machine_init();
@@ -280,6 +280,30 @@ draw_text(30, 510 + 17 * scale, ammo[1]);
 //explosives
 draw_sprite_stretched(spr_ammo_explosive, 0, 10, 500 + 2 * 17 * scale, 5 * scale, 12 * scale);
 draw_text(30, 510 + 2 * 17 * scale, ammo[2]);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Health
+scale = 2;
+//basic hp/totalhp
+draw_text(0,0, hp)
 </string>
           </argument>
         </arguments>
