@@ -49,20 +49,20 @@
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="Weapons">
-      <sprite>sprites\spr_gun_machinegun</sprite>
-      <sprite>sprites\spr_gun_cannon</sprite>
-      <sprite>sprites\spr_gun_sniper</sprite>
-      <sprite>sprites\spr_gun_watergun</sprite>
-      <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_ak47</sprite>
-      <sprite>sprites\spr_gun_uzi</sprite>
+      <sprite>sprites\spr_gun_cannon</sprite>
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
-      <sprite>sprites\spr_melee_sword</sprite>
+      <sprite>sprites\spr_gun_m4a4</sprite>
+      <sprite>sprites\spr_gun_machinegun</sprite>
+      <sprite>sprites\spr_gun_shotgun</sprite>
+      <sprite>sprites\spr_gun_sniper</sprite>
+      <sprite>sprites\spr_gun_uzi</sprite>
+      <sprite>sprites\spr_gun_watergun</sprite>
       <sprite>sprites\spr_melee_battleaxe1</sprite>
       <sprite>sprites\spr_melee_battleaxe2</sprite>
-      <sprite>sprites\spr_pistol1</sprite>
       <sprite>sprites\spr_melee_spear</sprite>
-      <sprite>sprites\spr_gun_m4a4</sprite>
+      <sprite>sprites\spr_melee_sword</sprite>
+      <sprite>sprites\spr_pistol1</sprite>
     </sprites>
     <sprites name="Retired Sprites">
       <sprite>sprites\spr_gun_shotgun_alpha</sprite>
@@ -118,6 +118,10 @@
           <scripts name="Actions">
             <script>scripts\updateWeaponPos.gml</script>
             <script>scripts\tryShootPlayer.gml</script>
+            <script>scripts\pointGun.gml</script>
+          </scripts>
+          <scripts name="States">
+            <script>scripts\state_enemy_frozen.gml</script>
           </scripts>
         </scripts>
       </scripts>
@@ -134,7 +138,7 @@
       <object>objects\control_lvl</object>
     </objects>
     <objects name="Enemies">
-      <object>objects\obj_slime</object>
+      <object>objects\obj_enemy_slime</object>
     </objects>
     <objects name="Environment">
       <objects name="Loot">
@@ -181,6 +185,7 @@
         <object>objects\obj_sword</object>
       </objects>
     </objects>
+    <object>objects\par_enemy_shooter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
