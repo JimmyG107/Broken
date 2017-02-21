@@ -52,8 +52,13 @@
     <sprites name="Weapons">
       <sprite>sprites\spr_gun_ak47</sprite>
       <sprite>sprites\spr_gun_cannon</sprite>
+<<<<<<< HEAD
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
       <sprite>sprites\spr_gun_machinegun</sprite>
+=======
+      <sprite>sprites\spr_gun_grenadeLauncher</sprite>
+      <sprite>sprites\spr_gun_m4a4</sprite>
+>>>>>>> fe8c195a9c9768a2c40f1588b7671f98abea336a
       <sprite>sprites\spr_gun_pistol</sprite>
       <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_sniper</sprite>
@@ -68,6 +73,7 @@
     <sprites name="Retired Sprites">
       <sprite>sprites\spr_gun_shotgun_alpha</sprite>
       <sprite>sprites\spr_gun_pistol_alpha</sprite>
+      <sprite>sprites\spr_gun_machinegun</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -178,7 +184,8 @@
         <object>objects\obj_gun_watergun</object>
         <object>objects\obj_gun_sniper</object>
         <object>objects\obj_gun_cannon</object>
-        <object>objects\obj_gun_machinegun</object>
+        <object>objects\obj_gun_grenadeLauncher</object>
+        <object>objects\obj_gun_negev</object>
         <object>objects\obj_gun_uzi</object>
         <object>objects\obj_gun_pistol</object>
         <object>objects\obj_gun_shotgun</object>
