@@ -55,12 +55,12 @@
       <sprite>sprites\spr_gun_watergun</sprite>
       <sprite>sprites\spr_gun_shotgun</sprite>
       <sprite>sprites\spr_gun_ak47</sprite>
+      <sprite>sprites\spr_gun_pistol</sprite>
       <sprite>sprites\spr_gun_uzi</sprite>
       <sprite>sprites\spr_gun_grenadelauncher1</sprite>
       <sprite>sprites\spr_melee_sword</sprite>
       <sprite>sprites\spr_melee_battleaxe1</sprite>
       <sprite>sprites\spr_melee_battleaxe2</sprite>
-      <sprite>sprites\spr_pistol1</sprite>
       <sprite>sprites\spr_melee_spear</sprite>
       <sprite>sprites\spr_gun_m4a4</sprite>
     </sprites>
