@@ -25,14 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(ord('P')))
+            <string>///Debug Keys
+if(keyboard_check_pressed(ord('P')))
 {
     par_character.ammo[2] = 999;
     par_character.ammo[1] = 999;
     par_character.ammo[0] = 999;
-    par_character.hp = 999;
-    par_character.hp_max = 999;
+    par_character.hp = 100;
+    par_character.hp_max = 100;
 }
+if(keyboard_check_pressed(ord('O')) &amp;&amp; keyboard_check_pressed(ord('I')))
+{
+    par_character.hp = 0;
+}
+
 </string>
           </argument>
         </arguments>
