@@ -123,12 +123,19 @@
           <scripts name="Actions">
             <script>scripts\act_enemy_updateWeaponPos.gml</script>
             <script>scripts\act_enemy_tryShootPlayer.gml</script>
-            <script>scripts\act_weapon_pointGun.gml</script>
+            <script>scripts\act_enemy_pointGun.gml</script>
           </scripts>
           <scripts name="States">
             <script>scripts\state_enemy_frozen.gml</script>
             <script>scripts\state_enemy_chase.gml</script>
             <script>scripts\state_enemy_evade.gml</script>
+            <scripts name="Patrol">
+              <script>scripts\state_enemy_patrol_circle.gml</script>
+              <script>scripts\state_enemy_patrol_curved.gml</script>
+              <script>scripts\state_enemy_patrol_reverse.gml</script>
+              <script>scripts\state_enemy_patrol_straight.gml</script>
+              <script>scripts\state_enemy_patrol_zigzag.gml</script>
+            </scripts>
           </scripts>
         </scripts>
       </scripts>
@@ -136,15 +143,14 @@
         <scripts name="Melee">
           <scripts name="Slime">
             <scripts name="States">
-              <script>scripts\state_enemy_slime_evade.gml</script>
               <script>scripts\state_enemy_slime_idle.gml</script>
-              <script>scripts\state_enemy_slime_patrol_circle.gml</script>
-              <script>scripts\state_enemy_slime_patrol_curved.gml</script>
-              <script>scripts\state_enemy_slime_patrol_reverse.gml</script>
-              <script>scripts\state_enemy_slime_patrol_straight.gml</script>
-              <script>scripts\state_enemy_slime_patrol_zigzag.gml</script>
             </scripts>
           </scripts>
+        </scripts>
+      </scripts>
+      <scripts name="Dudes">
+        <scripts name="Actions">
+          <script>scripts\act_move.gml</script>
         </scripts>
       </scripts>
     </scripts>
