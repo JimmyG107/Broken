@@ -75,6 +75,8 @@
   <backgrounds name="background">
     <background>background\bg_floor_wood</background>
     <background>background\bg_wall</background>
+    <background>background\bg_wall_stone</background>
+    <background>background\bg_floor_gravel</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
