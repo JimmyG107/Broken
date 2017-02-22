@@ -205,7 +205,7 @@
         <object>objects\obj_gun_particleSplitter</object>
       </objects>
       <objects name="Melee">
-        <object>objects\obj_sword</object>
+        <object>objects\obj_melee_sword</object>
       </objects>
     </objects>
   </objects>

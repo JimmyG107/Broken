@@ -31,6 +31,7 @@
     par_character.ammo[1] = 999;
     par_character.ammo[0] = 999;
     par_character.hp = 999;
+    par_character.hp_max = 999;
 }
 </string>
           </argument>
