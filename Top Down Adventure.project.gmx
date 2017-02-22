@@ -94,8 +94,8 @@
     <scripts name="Objects">
       <scripts name="Parents">
         <scripts name="par_gun">
-          <script>scripts\shoot.gml</script>
-          <script>scripts\setBulletSpeed.gml</script>
+          <script>scripts\act_gun_shoot.gml</script>
+          <script>scripts\act_gun_setBulletSpeed.gml</script>
         </scripts>
         <scripts name="par_melee">
           <script>scripts\swing.gml</script>

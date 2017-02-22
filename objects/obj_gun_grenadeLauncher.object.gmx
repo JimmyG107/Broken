@@ -28,7 +28,7 @@
             <string>///Gun Properties
 
 //Type of Weapon
-action = shoot;
+action = act_gun_shoot;
 ammo_type = "explosive";
 
 //Uses per sec and Burst

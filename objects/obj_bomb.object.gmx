@@ -106,7 +106,7 @@ if(image_index == 18 &amp;&amp; scale == 2)
         bomb.scale = 1;
         bomb.image_angle = random_range(0, 360);
         bomb.spd = 5;
-        setBulletSpeed(bomb);
+        act_gun_setBulletSpeed(bomb);
     }
 }
 if(image_index == 26)

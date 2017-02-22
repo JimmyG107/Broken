@@ -8,7 +8,7 @@ for(bul = 0; bul < num_bullets; bul++)
     bullet.spd = bulletSpeed;
     bullet.slow_spd = bulletSpeedDecay;
     //set the bullet's x and y speeds based on its spd variable and angle.
-    setBulletSpeed(bullet);
+    act_gun_setBulletSpeed(bullet);
     bullet.scale = 2;
     bullet.damage = damage;
     if player bullet.create_source = "player";
