@@ -102,15 +102,15 @@
         </scripts>
         <scripts name="par_weapon">
           <script>scripts\act_weapon_checkFlip.gml</script>
-          <script>scripts\tryWeapon.gml</script>
+          <script>scripts\act_weapon_tryUse.gml</script>
         </scripts>
         <scripts name="par_character">
           <scripts name="Actions">
-            <script>scripts\attemptFire.gml</script>
-            <script>scripts\switchGuns.gml</script>
-            <script>scripts\updateCamera.gml</script>
-            <script>scripts\updateGunAngle.gml</script>
-            <script>scripts\updateGunPos.gml</script>
+            <script>scripts\act_character_attemptFire.gml</script>
+            <script>scripts\act_character_switchGuns.gml</script>
+            <script>scripts\act_character_updateCamera.gml</script>
+            <script>scripts\act_character_updateGunAngle.gml</script>
+            <script>scripts\act_character_updateGunPos.gml</script>
           </scripts>
           <scripts name="States">
             <script>scripts\state_player_move.gml</script>
@@ -119,9 +119,9 @@
         </scripts>
         <scripts name="par_enemy">
           <scripts name="Actions">
-            <script>scripts\updateWeaponPos.gml</script>
-            <script>scripts\tryShootPlayer.gml</script>
-            <script>scripts\pointGun.gml</script>
+            <script>scripts\act_enemy_updateWeaponPos.gml</script>
+            <script>scripts\act_enemy_tryShootPlayer.gml</script>
+            <script>scripts\act_weapon_pointGun.gml</script>
           </scripts>
           <scripts name="States">
             <script>scripts\state_enemy_frozen.gml</script>

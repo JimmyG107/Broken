@@ -7,11 +7,11 @@ if(state_new)
     spd_y = 0;
 }
 
-updateCamera();
-switchGuns();
-updateGunPos();
-updateGunAngle();
-attemptFire();
+act_character_updateCamera();
+act_character_switchGuns();
+act_character_updateGunPos();
+act_character_updateGunAngle();
+act_character_attemptFire();
 
 //Check if we need to exit to move state
 

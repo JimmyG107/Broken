@@ -9,9 +9,9 @@ if(state_new)
 }
 
 //Control Guns
-updateGunAngle();
-switchGuns();
-attemptFire();
+act_character_updateGunAngle();
+act_character_switchGuns();
+act_character_attemptFire();
 
 //Change Speeds from Key Input
 spd_left += (aKey * snappy - !aKey * stopping);
@@ -87,8 +87,8 @@ if(place_meeting(x, y-1, par_obstacle))
 }
 
 //Other Behaviors
-updateCamera();
-updateGunPos();
+act_character_updateCamera();
+act_character_updateGunPos();
 
 //Determine if we need to go to the slow state
 if(spd_x == 0 && spd_y == 0)

@@ -4,6 +4,6 @@ if(lMouse && ammo[weapons[active_weapon].ammo_type] >= weapons[active_weapon].am
 {   //go into the active weapon and shoot it
     with (weapons[active_weapon])
     {
-        tryWeapon();
+        act_weapon_tryUse();
     }
 }

@@ -3,6 +3,6 @@ if(!lineOfSight(x, y, obj_character.x, obj_character.y, par_obstacle) && random(
 {
     with (weapons[active_weapon])
     {
-        tryWeapon();
+        act_weapon_tryUse();
     }
 }
