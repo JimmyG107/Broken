@@ -136,7 +136,6 @@
             <scripts name="States">
               <script>scripts\state_enemy_slime_evade.gml</script>
               <script>scripts\state_enemy_slime_idle.gml</script>
-              <script>scripts\state_enemy_slime_still.gml</script>
               <script>scripts\state_enemy_slime_patrol_circle.gml</script>
               <script>scripts\state_enemy_slime_patrol_curved.gml</script>
               <script>scripts\state_enemy_slime_patrol_reverse.gml</script>
