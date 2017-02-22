@@ -50,6 +50,7 @@
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="Weapons">
+      <sprite>sprites\spr_melee_elucidator</sprite>
       <sprite>sprites\spr_gun_ak47</sprite>
       <sprite>sprites\spr_gun_cannon</sprite>
       <sprite>sprites\spr_gun_grenadeLauncher</sprite>
@@ -63,6 +64,7 @@
       <sprite>sprites\spr_melee_spear</sprite>
       <sprite>sprites\spr_melee_sword</sprite>
       <sprite>sprites\spr_gun_negev</sprite>
+      <sprite>sprites\spr_melee_darkrepulser</sprite>
     </sprites>
     <sprites name="Retired Sprites">
       <sprite>sprites\spr_gun_shotgun_alpha</sprite>
