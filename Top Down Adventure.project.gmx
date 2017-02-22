@@ -98,7 +98,7 @@
           <script>scripts\act_gun_setBulletSpeed.gml</script>
         </scripts>
         <scripts name="par_melee">
-          <script>scripts\swing.gml</script>
+          <script>scripts\act_melee_swing.gml</script>
         </scripts>
         <scripts name="par_weapon">
           <script>scripts\flipWeapon.gml</script>
