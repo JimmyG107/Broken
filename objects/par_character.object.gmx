@@ -343,7 +343,7 @@ else if (par_character.hp/par_character.hp_max != 1 || 0)
             }
     } 
 //Draw Text Health  
-draw_text(65,55, string(hp) +  "/" + string(hp_max)); 
+draw_text_colour(60,57, string(hp) +  "/" + string(hp_max),c_white,c_white,c_white,c_white,1); 
 
 
 

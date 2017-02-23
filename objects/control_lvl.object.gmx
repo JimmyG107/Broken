@@ -42,6 +42,10 @@ if(keyboard_check_pressed(ord('M')))
 {
     par_character.hp = .9 * par_character.hp
 }
+if(keyboard_check_pressed(ord('N')))
+{
+    room_goto(rm_init);
+}
 /*
 if(keyboard_check_pressed(ord('T')) &amp;&amp; keyboard_check_pressed(ord('Y')))//breaks things
 {

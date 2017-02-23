@@ -395,7 +395,7 @@ for(x_pos = 0; x_pos <= x_max - x_min; x_pos++)
 }
 
 //print out the level design in the console
-for(i = 0; i < array_length_2d(global.room_final, 0); i++)
+/*for(i = 0; i < array_length_2d(global.room_final, 0); i++)
 {
     prt_line = "";
     for(j = 0; j < array_height_2d(global.room_final); j++)
@@ -403,7 +403,7 @@ for(i = 0; i < array_length_2d(global.room_final, 0); i++)
         prt_line = prt_line + string(global.room_final[j, i]) + " ";
     }
     show_debug_message(prt_line);
-}
+}*/
 
 //initialize the 1st, 2nd, and 3rd quardant for the cartesian array
 global.room_final1[0, 0] = "";
