@@ -124,6 +124,7 @@
             <script>scripts\act_enemy_updateWeaponPos.gml</script>
             <script>scripts\act_enemy_tryShootPlayer.gml</script>
             <script>scripts\act_enemy_pointGun.gml</script>
+            <script>scripts\act_enemy_die.gml</script>
           </scripts>
           <scripts name="States">
             <script>scripts\state_enemy_frozen.gml</script>
@@ -135,6 +136,7 @@
               <script>scripts\state_enemy_patrol_reverse.gml</script>
               <script>scripts\state_enemy_patrol_straight.gml</script>
               <script>scripts\state_enemy_patrol_zigzag.gml</script>
+              <script>scripts\state_enemy_patrol_escapeWall.gml</script>
             </scripts>
           </scripts>
         </scripts>

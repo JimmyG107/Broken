@@ -34,7 +34,7 @@ for(create_x = start_x; create_x <= end_x; create_x += 32)
 {
     for(create_y = start_y; create_y <= end_y; create_y += 32)
     {
-        tile_add(bg_floor_wood, 0, 0, 32, 32, create_x - 16, create_y - 16, 10000);
+        tile_add(bg_floor_gravel, 0, 0, 32, 32, create_x - 16, create_y - 16, 10000);
         setPosAll(create_x/32, create_y/32, 1);
         tile_add(bg_wall, 0, 0, 32, 32, create_x - 16, create_y - 16, 9000);
     }

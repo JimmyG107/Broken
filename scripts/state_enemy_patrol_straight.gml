@@ -16,3 +16,4 @@ else
     move_time--;
     act_move();
 }
+act_enemy_die();
