@@ -254,7 +254,7 @@ for(i = 0; i < x_max - x_min + 1; i++)
 {
     for(j = 0; j < y_max - y_min + 1; j++)
     {
-        room_tile_add(rm_next, bg_floor_wood, 0, 0, 32, 32, i * 32 - 16, j * 32 - 16, 10000)    //make the background tile of the room be clean wood
+        room_tile_add(rm_next, bg_floor_gravel, 0, 0, 32, 32, i * 32 - 16, j * 32 - 16, 10000)    //make the background tile of the room be clean wood
     }
 }
 

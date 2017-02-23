@@ -1,3 +1,4 @@
+act_enemy_die();
 if(instance_exists(par_character))
 {
     if(distance_to_object(par_character) < range)
