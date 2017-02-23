@@ -308,10 +308,15 @@ draw_text(30, 510 + 2 * 17 * scale, ammo[2]);
             <string>///Draw Health
 scale = 2;
 //Draw Outline of Health Bar
-draw_line_width(59 ,18 ,59 ,112 , 3); //Vertical Middle Left
+draw_line_width(59 ,18 ,59 ,112 , 1); //Vertical Middle Left
 draw_line_width(91 ,18 ,91 ,112 , 1); //Vertical Middle Right
-draw_line_width(29 ,48 ,29 ,82 , 3); //Vertical Outer Left
-draw_line_width(120 ,48 ,120 ,82 , 3); //Vertical Outer Right
+draw_line_width(29 ,48 ,29 ,82 , 1); //Vertical Outer Left
+draw_line_width(121 ,48 ,121 ,82 , 1); //Vertical Outer Right
+draw_line_width(121 ,48 ,29 ,48 , 1); //Horizontal Middle Top
+draw_line_width(121 ,81 ,29 ,81 , 1); //Horizontal Middle Bottom
+draw_line_width(59 ,18 ,91 ,18 , 1); //Horizontal Outer Top
+draw_line_width(59 ,111 ,91 ,111 , 1); //Horizontal Outer Bottom
+
 //DrawHealthBar
 if (par_character.hp/par_character.hp_max = 1)
     {
