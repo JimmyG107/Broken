@@ -46,8 +46,8 @@ if(state_new)
     angle = ds_list_find_value(quadrants, 0);
     move_dir = random_range(angle, angle + 90);
     move_time = floor(random_range(31, 91));
-    spd_x = spd * radtodeg(cos(move_dir));
-    spd_y = spd * radtodeg(sin(move_dir));
+    spd_x = spd * cos(degtorad(move_dir));
+    spd_y = spd * -sin(degtorad(move_dir));
     ds_list_destroy(quadrants);
 }
 if(move_time <= 0)

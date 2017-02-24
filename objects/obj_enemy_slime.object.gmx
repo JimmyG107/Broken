@@ -75,7 +75,7 @@ state_create("Patrol Zigzag", state_enemy_patrol_zigzag);
           <argument>
             <kind>1</kind>
             <string>///Initialize Settings
-spd = .1;
+spd = 3;
 </string>
           </argument>
         </arguments>

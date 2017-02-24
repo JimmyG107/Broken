@@ -2,8 +2,8 @@ if(state_new)
 {
     move_time = floor(random_range(11, 91));
     move_dir = random_range(0, 360);
-    spd_x = spd * radtodeg(cos(move_dir));
-    spd_y = spd * radtodeg(sin(move_dir));
+    spd_x = spd * cos(degtorad(move_dir));
+    spd_y = spd * -sin(degtorad(move_dir));
     show_debug_message("spd_x = " + string(spd_x));
     show_debug_message("spd_y = " + string(spd_y));
 }
