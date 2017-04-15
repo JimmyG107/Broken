@@ -2,10 +2,27 @@ if(state_new)
 {
     move_dir = random(360);
     move_time = floor(random_range(11, 91));
+    rot = floor(random_range(1, 5)) * (floor(random(2)) * 2 - 1);//the first bit gets an integer 1-4, the second one gets positive or negative
 }
-//Calculate spd_x and spd_y
-spd_x = spd * cos(degtorad(move_dir));
-spd_y = spd * -sin(degtorad(move_dir));
-
-//Move
-act_move();
+if(move_time <= 0)
+{
+    state_switch("Idle");
+}
+else if(!collision_line(x, y, par_character.x, par_character.y, par_obstacle, false, true))
+{
+    state_switch("Chase");
+}
+else
+{
+    //Calculate spd_x and spd_y
+    spd_x = spd * cos(degtorad(move_dir));
+    spd_y = spd * -sin(degtorad(move_dir));
+    
+    //Move
+    act_move();
+    move_time--;
+    
+    //Rotate
+    move_dir += rot;
+}
+act_enemy_checkDie();

@@ -54,6 +54,8 @@ state_create("Patrol Curved", state_enemy_patrol_curved);
 state_create("Patrol Reverse", state_enemy_patrol_reverse);
 state_create("Patrol Straight", state_enemy_patrol_straight);
 state_create("Patrol Zigzag", state_enemy_patrol_zigzag);
+state_create("Escape Wall", state_enemy_patrol_escapeWall);
+state_create("Chase", state_enemy_chase_straight);
 </string>
           </argument>
         </arguments>
