@@ -38,13 +38,13 @@ burst_max = 1;
 
 //Bullets
 projectile = obj_bullet_water;
-num_bullets = 1;
+num_bullets = 3;
 ammo_cost = 0;
-bulletSpeed = 10;
+bulletSpeed = 20;
 bulletSpeedDecay = .97;
 
 //Other Settings
-spread = 50;
+spread = 10;
 damage = 0;
 
 //Visual
